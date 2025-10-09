@@ -41,7 +41,7 @@ export default function BioHero() {
             </h1>
 
             <p className="mt-5 max-w-xl text-[#2c3c2c]/80">
-             At Trinity, we bridge innovation, technology, and healthcare—connecting leading global health brands with the professionals and institutions that need them most. As a trusted health tech dealership, we deliver reliability, service excellence, and future-ready solutions that advance care and empower better health outcomes. Learn more about through our customer.
+             At Trinity, we bridge innovation, technology, and healthcare—connecting leading global health brands with the professionals and institutions that need them most. As a trusted health tech dealership, we deliver reliability, service excellence, and future-ready solutions that advance care and empower better health outcomes. Learn more about us through our customers.
             </p>
 
             <div className="mt-8">
