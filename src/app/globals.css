@@ -57,6 +57,24 @@
   animation-delay: 0.2s;
 }
 
+/* infinite horizontal scroll: duplicated slides technique */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* animate-scroll: applies animation that moves -50% (since slides duplicated) */
+.animate-scroll {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem; /* keep same gap as tailwind gap-4 */
+  animation: scroll-left var(--scroll-duration, 20s) linear infinite;
+  will-change: transform;
+}
 
 
 

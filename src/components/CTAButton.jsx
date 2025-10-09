@@ -6,12 +6,11 @@ export default function CTAButton({ text, href = "#" }) {
   return (
     <a
       href={href}
-      className="relative inline-flex items-center px-5 py-3 text-sm font-bold text-white rounded-lg border-2 border-yellow-300 overflow-hidden
+      className="relative inline-flex items-center px-2 py-3 text-sm font-bold text-white rounded-lg border-2 border-yellow-300 overflow-hidden
                  before:absolute before:inset-0 before:bg-yellow-400 before:origin-left before:scale-x-0 before:text-black before:transition-transform before:duration-300 before:ease-in-out
                  hover:before:scale-x-100 z-10"
     >
       <span className="relative z-20">{text}</span>
-      <span className="inline-block size-2 rounded-full bg-yellow-100 ml-2 animate-ping relative z-20" />
     </a>
   );
 }
