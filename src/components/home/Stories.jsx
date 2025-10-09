@@ -168,7 +168,7 @@ export default function StoriesCarousel({
   if (total === 0) return null;
 
   return (
-    <section className="relative w-full overflow-hidden py-8">
+    <section className="relative w-full overflow-hidden py-8 bg-[#F7F8F4]">
       <div className="relative  mx-auto pl-2">
         {/* Track */}
         <div
