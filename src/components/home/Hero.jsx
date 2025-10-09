@@ -89,8 +89,7 @@ export default function Hero() {
         <button
           aria-label="Previous slide"
           onClick={prev}
-          className="group grid place-items-center size-9 sm:size-10 rounded-full bg-white/10 text-white border border-white/20
-                     backdrop-blur-md transition-all duration-200 hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+          className="group grid place-items-center size-9 sm:size-10 text-white "
         >
           <ChevronLeft className="size-5 sm:size-6 transition-transform duration-200 group-hover:-translate-x-0.5" />
         </button>
@@ -114,8 +113,7 @@ export default function Hero() {
         <button
           aria-label="Next slide"
           onClick={next}
-          className="group grid place-items-center size-9 sm:size-10 rounded-full bg-white/10 text-white border border-white/20
-                     backdrop-blur-md transition-all duration-200 hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+          className="group grid place-items-center size-9 sm:size-10 text-white "
         >
           <ChevronRight className="size-5 sm:size-6 transition-transform duration-200 group-hover:translate-x-0.5" />
         </button>
@@ -125,8 +123,7 @@ export default function Hero() {
             paused ? "Play background video" : "Pause background video"
           }
           onClick={() => setPaused((p) => !p)}
-          className="ml-1 grid place-items-center size-9 sm:size-10 rounded-full bg-white/10 text-white border border-white/20
-                     backdrop-blur-md transition-all duration-200 hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+          className="group grid place-items-center size-9 sm:size-10 text-white "
         >
           {paused ? (
             <Play className="size-5 sm:size-6" />
