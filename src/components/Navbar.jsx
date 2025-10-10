@@ -16,13 +16,13 @@ export default function Navbar() {
       {/* Logo */}
       <div className="flex items-center space-x-3">
         <Image
-          src="/logos/logob.svg"
+          src="/logos/logoc.svg"
           alt="TechnoGym Logo"
           width={20}
           height={8}
           className="object-contain"
         />
-        <span className="text-bold">Trinity </span>
+        <span className="font-bold">Trinity </span>
       </div>
 
       {/* Desktop Menu */}
@@ -181,23 +181,16 @@ export default function Navbar() {
 
         <li className="hover:text-yellow-500 cursor-pointer">FAQ</li>
         <li className="hover:text-yellow-500 cursor-pointer">Stories</li>
-        <li className="hover:text-yellow-500 cursor-pointer">Get In Touch</li>
-        <li className="hover:text-yellow-500 cursor-pointer flex items-center space-x-1">
-          <span>Business</span>
-          <span className="text-xs bg-yellow-400 text-black px-1 rounded-sm">
-            ↗
-          </span>
-        </li>
       </ul>
 
       {/* Right Section */}
-      <div className="hidden md:flex items-center space-x-5 text-sm">
-        <button className="font-semibold hover:text-yellow-500">Log in</button>
-        <div className="flex items-center space-x-1">
-          <Phone size={16} />
-          <span>+919820052225</span>
-        </div>
-        <Search className="cursor-pointer hover:text-yellow-500" size={18} />
+      <div className="hidden md:flex items-center space-x-5 text-sm font-bold">
+        <span>
+          Get In Touch{" "}
+          <span className="text-xs bg-[#21a70f] text-white px-1 rounded-sm">
+            ↗
+          </span>
+        </span>
       </div>
 
       {/* Mobile Menu Button */}
