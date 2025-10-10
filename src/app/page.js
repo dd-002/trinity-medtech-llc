@@ -1,9 +1,13 @@
+"use client";
+
+import React from "react";
 import Hero from "@/components/home/Hero";
 import Navbar from "@/components/Navbar";
 import BentoShowcase from "@/components/home/BentoShowcase";
 import StoriesCarousel from "@/components/home/Stories";
 import BioHero from "@/components/home/StoriesHero";
 import BrandLogoSection from "@/components/home/BrandSection";
+import Footer from "@/components/Footer";
 
 const STORIES = [
   {
@@ -80,6 +84,7 @@ export default function HomePage() {
       <BrandLogoSection />
       <BioHero />
       <StoriesCarousel stories={STORIES} delay={5000} visibleCount={3} />
+      <Footer/>
     </main>
   );
 }
