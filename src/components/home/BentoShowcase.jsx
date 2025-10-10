@@ -4,16 +4,16 @@ import CTAButton from "../CTAButton";
 
 export default function BentoShowcase() {
   return (
-    <section className="mx-auto w-full px-5 md:px-30 lg:px-60 pt-10 md:pt-20 lg:pt-32 pb-10 bg-[#1b1b1b] mt-6 rounded-t-lg">
+    <section className="mx-auto w-full px-5 md:px-30 lg:px-60 pt-10 md:pt-20 lg:pt-32 pb-10 bg-[#f7f8f4] mt-6 rounded-t-lg">
       {/* Heading */}
       <header className="mx-4 md:mx-16 lg:mx-32 mb-12">
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-black tracking-tight">
           Leading UAE in{" "}
-          <span className="text-yellow-400">
+          <span className="text-[#237618]">
             Sports Medicine & Rehabilitation
           </span>
         </h2>
-        <p className="mt-4 max-w-3xl text-sm  text-white/80 leading-relaxed">
+        <p className="mt-4 max-w-3xl text-sm  text-black leading-relaxed">
           Since 2007 Trinity has been a solution provider for Sports Medicine
           and Rehabilitation for government offices and private companies.
           Trinity is working with the vision to become the leader in providing
@@ -32,7 +32,7 @@ export default function BentoShowcase() {
                       grid-cols-1 md:grid-cols-6 auto-rows-[160px] md:auto-rows-[200px] lg:auto-rows-[220px]"
       >
         {/* Lead text card */}
-        <article className=" relative col-span-1 md:col-span-3 row-span-2 md:row-span-2 lg:row-span-1 rounded-2xl bg-neutral-900/80 ring-1 ring-white/10 overflow-hidden p-5 lg:p-10 ">
+        <article className=" relative col-span-1 md:col-span-3 row-span-2 md:row-span-2 lg:row-span-1 rounded-2xl bg-[#13470c] ring-1 ring-white/10 overflow-hidden p-5 lg:p-10 ">
           <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white">
             Trinity Medtech LLC
           </h3>
@@ -54,7 +54,7 @@ export default function BentoShowcase() {
           />
           <figcaption className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-60 group-hover:opacity-70 transition-opacity" />
           <div className="absolute left-4 bottom-4 md:left-5 md:bottom-5">
-            <span className="inline-flex items-center rounded-lg bg-yellow-400 text-black text-xs md:text-sm font-semibold px-2 py-1">
+            <span className="inline-flex items-center rounded-lg bg-[#13470c] text-black text-xs md:text-sm font-semibold px-2 py-1 text-white">
               Cosmed
             </span>
             <h4 className="mt-1 text-white text-lg md:text-xl font-semibold">

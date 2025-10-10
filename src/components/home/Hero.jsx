@@ -100,11 +100,11 @@ export default function Hero() {
               key={i}
               onClick={() => setIndex(i)}
               aria-label={`Go to slide ${i + 1}`}
-              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ease-out bg-white/50 hover:bg-white
+              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ease-out hover:bg-white
                          ${
                            i === index
-                             ? "w-8 sm:w-10 bg-yellow-400 shadow-[0_0_0_3px_rgba(0,0,0,0.15)]"
-                             : "w-3 sm:w-4"
+                             ? "w-8 sm:w-10 bg-[#21a70f] shadow-[0_0_0_3px_rgba(0,0,0,0.15)]"
+                             : "w-3 sm:w-4 bg-white"
                          }`}
             />
           ))}

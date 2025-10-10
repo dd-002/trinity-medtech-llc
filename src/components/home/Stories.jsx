@@ -167,7 +167,7 @@ export default function StoriesCarousel({
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               <div className="absolute left-4 bottom-4 right-4">
                 {s.subtitle && (
-                  <span className="inline-block text-yellow-400 text-xs sm:text-sm px-2 py-0.5 font-semibold">
+                  <span className="inline-block text-[#228611] text-xs sm:text-sm px-2 py-0.5 font-semibold">
                     {s.subtitle}
                   </span>
                 )}

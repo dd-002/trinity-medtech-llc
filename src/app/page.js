@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import BentoShowcase from "@/components/home/BentoShowcase";
 import StoriesCarousel from "@/components/home/Stories";
 import BioHero from "@/components/home/StoriesHero";
+import BrandLogoSection from "@/components/home/BrandSection";
 
 const STORIES = [
   {
@@ -76,6 +77,7 @@ export default function HomePage() {
       <Navbar />
       <Hero />
       <BentoShowcase />
+      <BrandLogoSection />
       <BioHero />
       <StoriesCarousel stories={STORIES} delay={5000} visibleCount={3} />
     </main>
