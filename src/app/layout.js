@@ -1,9 +1,13 @@
+import { icons } from "lucide-react";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Trinity Fitness",
   description: "Premium fitness equipment for home and commercial use.",
+  icons:{
+    icon:"/logo.ico"
+  }
 };
 
 export default function RootLayout({ children }) {
