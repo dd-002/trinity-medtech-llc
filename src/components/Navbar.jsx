@@ -26,11 +26,11 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Menu */}
-      <ul className="hidden md:flex items-center space-x-6 font-medium text-sm">
+      <ul className="hidden md:flex items-center space-x-6 font-bold text-sm">
         {/* Products */}
         <li className="relative group">
           <button
-            className="flex items-center gap-1 hover:text-yellow-500 relative z-10"
+            className="flex items-center gap-1 hover:text-green-700 relative z-10"
             aria-haspopup="true"
             aria-expanded="false"
           >
@@ -52,22 +52,22 @@ export default function Navbar() {
                 <div>
                   <p className="mb-3 text-gray-500">Home Gym Equipment</p>
                   <ul className="space-y-2">
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Treadmills
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Bikes
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Ellipticals
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Rowers
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Stair Climbers
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Multi Gyms
                     </li>
                   </ul>
@@ -75,19 +75,19 @@ export default function Navbar() {
                 <div>
                   <p className="mb-3 text-gray-500">Strength</p>
                   <ul className="space-y-2">
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Barbells & Plates
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Racks
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Benches
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Dumbbells & Kettlebells
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Bundles
                     </li>
                   </ul>
@@ -95,22 +95,22 @@ export default function Navbar() {
                 <div>
                   <p className="mb-3 text-gray-500">Accessories</p>
                   <ul className="space-y-2">
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Fitness accessories
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Bands
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Mats & Pads
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Add‑ons
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Storage racks
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Bags & Gear
                     </li>
                   </ul>
@@ -118,16 +118,16 @@ export default function Navbar() {
                 <div>
                   <p className="mb-3 text-gray-500">Training Type</p>
                   <ul className="space-y-2">
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Cardio
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Strength
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Functional
                     </li>
-                    <li className="hover:text-yellow-500 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer">
                       Flexibility
                     </li>
                   </ul>
@@ -140,11 +140,11 @@ export default function Navbar() {
         {/* Brands */}
         <li className="relative group">
           <button
-            className="flex items-center gap-1 hover:text-yellow-500 relative z-10"
+            className="flex items-center gap-1 hover:text-green-700 relative z-10"
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Products
+            Brands
             <ChevronDown
               size={16}
               className="transition-transform duration-200 group-hover:rotate-180"
@@ -159,28 +159,37 @@ export default function Navbar() {
           >
             <div className="pointer-events-auto mt-3 w-[920px] max-w-[92vw] rounded-2xl border border-gray-200 bg-white shadow-xl p-6 origin-top">
               <ul className="grid grid-cols-1 gap-2 text-sm">
-                <li className="hover:text-yellow-500 cursor-pointer">
-                  Personal
+                <li className="hover:text-green-700 cursor-pointer">
+                  h/p/cosmos
                 </li>
-                <li className="hover:text-yellow-500 cursor-pointer">Artis</li>
-                <li className="hover:text-yellow-500 cursor-pointer">Excite</li>
-                <li className="hover:text-yellow-500 cursor-pointer">Skill</li>
-                <li className="hover:text-yellow-500 cursor-pointer">
-                  Biostrength
+                <li className="hover:text-green-700 cursor-pointer">Cosmed</li>
+                <li className="hover:text-green-700 cursor-pointer">Contemplas</li>
+                <li className="hover:text-green-700 cursor-pointer">Ergoline</li>
+                <li className="hover:text-green-700 cursor-pointer">
+                  Zebris
                 </li>
-                <li className="hover:text-yellow-500 cursor-pointer">
-                  Pure Strength
+                <li className="hover:text-green-700 cursor-pointer">
+                  Kinvent
                 </li>
-                <li className="hover:text-yellow-500 cursor-pointer">
-                  My Selection
+                <li className="hover:text-green-700 cursor-pointer">
+                  Humacnorm
+                </li>
+                <li className="hover:text-green-700 cursor-pointer">
+                  Ametris
+                </li>
+                <li className="hover:text-green-700 cursor-pointer">
+                  CTN
+                </li>
+                <li className="hover:text-green-700 cursor-pointer">
+                  Cellit
                 </li>
               </ul>
             </div>
           </div>
         </li>
 
-        <li className="hover:text-yellow-500 cursor-pointer">FAQ</li>
-        <li className="hover:text-yellow-500 cursor-pointer">Stories</li>
+        <li className="hover:text-green-700 cursor-pointer">FAQ</li>
+        <li className="hover:text-green-700 cursor-pointer">Stories</li>
       </ul>
 
       {/* Right Section */}
@@ -196,7 +205,7 @@ export default function Navbar() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden text-gray-800 hover:text-yellow-500"
+        className="md:hidden text-gray-800 hover:text-green-700"
         aria-label="Toggle menu"
         aria-expanded={isOpen}
       >
@@ -216,7 +225,7 @@ export default function Navbar() {
             {/* Products collapsible with height animation */}
             <li>
               <button
-                className="w-full flex items-center justify-between hover:text-yellow-500"
+                className="w-full flex items-center justify-between hover:text-green-700"
                 onClick={() =>
                   setMobileOpen((p) => ({ ...p, products: !p.products }))
                 }
@@ -242,27 +251,27 @@ export default function Navbar() {
                     <div>
                       <p className="text-gray-500 mb-2">Home Gym</p>
                       <ul className="space-y-1 pl-3">
-                        <li className="hover:text-yellow-500">Treadmills</li>
-                        <li className="hover:text-yellow-500">Bikes</li>
-                        <li className="hover:text-yellow-500">Ellipticals</li>
-                        <li className="hover:text-yellow-500">Rowers</li>
+                        <li className="hover:text-green-700">Treadmills</li>
+                        <li className="hover:text-green-700">Bikes</li>
+                        <li className="hover:text-green-700">Ellipticals</li>
+                        <li className="hover:text-green-700">Rowers</li>
                       </ul>
                     </div>
                     <div>
                       <p className="text-gray-500 mb-2">Strength</p>
                       <ul className="space-y-1 pl-3">
-                        <li className="hover:text-yellow-500">Racks</li>
-                        <li className="hover:text-yellow-500">Benches</li>
-                        <li className="hover:text-yellow-500">Dumbbells</li>
-                        <li className="hover:text-yellow-500">Bundles</li>
+                        <li className="hover:text-green-700">Racks</li>
+                        <li className="hover:text-green-700">Benches</li>
+                        <li className="hover:text-green-700">Dumbbells</li>
+                        <li className="hover:text-green-700">Bundles</li>
                       </ul>
                     </div>
                     <div>
                       <p className="text-gray-500 mb-2">Accessories</p>
                       <ul className="space-y-1 pl-3">
-                        <li className="hover:text-yellow-500">Bands</li>
-                        <li className="hover:text-yellow-500">Mats & Pads</li>
-                        <li className="hover:text-yellow-500">Storage</li>
+                        <li className="hover:text-green-700">Bands</li>
+                        <li className="hover:text-green-700">Mats & Pads</li>
+                        <li className="hover:text-green-700">Storage</li>
                       </ul>
                     </div>
                   </div>
@@ -273,7 +282,7 @@ export default function Navbar() {
             {/* Brands collapsible */}
             <li>
               <button
-                className="w-full flex items-center justify-between hover:text-yellow-500"
+                className="w-full flex items-center justify-between hover:text-green-700"
                 onClick={() =>
                   setMobileOpen((p) => ({ ...p, brands: !p.brands }))
                 }
@@ -296,31 +305,31 @@ export default function Navbar() {
               >
                 <div className="overflow-hidden">
                   <ul className="space-y-1 text-[13px] text-gray-700 pl-3">
-                    <li className="hover:text-yellow-500">Personal</li>
-                    <li className="hover:text-yellow-500">Artis</li>
-                    <li className="hover:text-yellow-500">Excite</li>
-                    <li className="hover:text-yellow-500">Skill</li>
-                    <li className="hover:text-yellow-500">Biostrength</li>
-                    <li className="hover:text-yellow-500">Pure Strength</li>
-                    <li className="hover:text-yellow-500">My Selection</li>
+                    <li className="hover:text-green-700">Personal</li>
+                    <li className="hover:text-green-700">Artis</li>
+                    <li className="hover:text-green-700">Excite</li>
+                    <li className="hover:text-green-700">Skill</li>
+                    <li className="hover:text-green-700">Biostrength</li>
+                    <li className="hover:text-green-700">Pure Strength</li>
+                    <li className="hover:text-green-700">My Selection</li>
                   </ul>
                 </div>
               </div>
             </li>
 
-            <li className="hover:text-yellow-500 cursor-pointer">FAQ</li>
-            <li className="hover:text-yellow-500 cursor-pointer">Stories</li>
-            <li className="hover:text-yellow-500 cursor-pointer">Membership</li>
-            <li className="hover:text-yellow-500 cursor-pointer flex items-center space-x-1">
+            <li className="hover:text-green-700 cursor-pointer">FAQ</li>
+            <li className="hover:text-green-700 cursor-pointer">Stories</li>
+            <li className="hover:text-green-700 cursor-pointer">Membership</li>
+            <li className="hover:text-green-700 cursor-pointer flex items-center space-x-1">
               <span>Business</span>
-              <span className="text-xs bg-yellow-400 text-black px-1 rounded-sm">
+              <span className="text-xs bg-green-400 text-black px-1 rounded-sm">
                 ↗
               </span>
             </li>
           </ul>
 
           <div className="border-t border-gray-200 w-full pt-4">
-            <button className="block w-full text-left font-semibold hover:text-yellow-500">
+            <button className="block w-full text-left font-semibold hover:text-green-700">
               Log in
             </button>
             <div className="flex items-center mt-3 space-x-2 text-sm">
@@ -329,7 +338,7 @@ export default function Navbar() {
             </div>
             <div className="mt-3">
               <Search
-                className="cursor-pointer hover:text-yellow-500"
+                className="cursor-pointer hover:text-green-700"
                 size={20}
               />
             </div>
