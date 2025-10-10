@@ -13,7 +13,7 @@ export default function Footer() {
               className="inline-flex items-center gap-3 group"
               aria-label="Seed home"
             >
-              <Image src={"/logos/logow.svg"} width={20} height={20} />
+              <Image src={"/logos/logow.svg"} width={20} height={20} alt="Logo" />
               <span className="text-xl font-semibold tracking-wide">
                 Trinity Medtech LLC
               </span>
