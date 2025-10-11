@@ -154,7 +154,7 @@ export default function StoriesCarousel({
           {slides.map((s, idx) => (
             <div
               key={`${s.id}-${idx}`}
-              className="snap-start flex-shrink-0 w-[300px] sm:w-[300px] md:w-[400px] lg:w-[600px] h-[400px] sm:h-[400px] md:h-[700px] rounded-lg overflow-hidden relative cursor-pointer"
+              className="snap-start flex-shrink-0 w-[300px] sm:w-[300px] md:w-[400px] lg:w-[500px] h-[400px] sm:h-[400px] md:h-[550px] rounded-lg overflow-hidden relative cursor-pointer hover:-translate-y-3 transition-all duration-300 "
               onClick={() => setProgress(0)}
             >
               <Image
