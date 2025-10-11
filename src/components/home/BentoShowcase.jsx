@@ -4,7 +4,7 @@ import CTAButton from "../CTAButton";
 
 export default function BentoShowcase() {
   return (
-    <section className="mx-auto w-full px-5 md:px-30 lg:px-60 pt-10 md:pt-20 lg:pt-32 pb-10 bg-[#f7f8f4] mt-6 rounded-t-lg">
+    <section className="mx-auto w-full px-5 md:px-20 lg:px-40 pt-10 md:pt-20 lg:pt-32 pb-10 bg-[#f7f8f4] mt-6 rounded-t-lg">
       {/* Heading */}
       <header className="mx-4 md:mx-16 lg:mx-32 mb-12">
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-black tracking-tight">
