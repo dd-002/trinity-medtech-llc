@@ -8,6 +8,7 @@ import StoriesCarousel from "@/components/home/Stories";
 import BioHero from "@/components/home/StoriesHero";
 import BrandLogoSection from "@/components/home/BrandSection";
 import Footer from "@/components/Footer";
+import FAQSection from "@/components/FAQ";
 
 const STORIES = [
   {
@@ -84,6 +85,7 @@ export default function HomePage() {
       <BrandLogoSection />
       <BioHero />
       <StoriesCarousel stories={STORIES} delay={5000} visibleCount={3} />
+      <FAQSection />
       <Footer/>
     </main>
   );
