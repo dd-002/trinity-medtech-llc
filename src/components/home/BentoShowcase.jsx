@@ -32,19 +32,41 @@ export default function BentoShowcase() {
                       grid-cols-1 md:grid-cols-6 auto-rows-[160px] md:auto-rows-[200px] lg:auto-rows-[220px]"
       >
         {/* Lead text card */}
-        <article className=" relative col-span-1 md:col-span-3 row-span-2 md:row-span-2 lg:row-span-2 rounded-2xl bg-[#13470c] ring-1 ring-white/10 overflow-hidden p-5 lg:p-10 ">
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white">
-            Trinity Medtech LLC
-          </h3>
-          <p className="my-4 text-white/75 max-w-md text-sm md:text-base">
-            Equipment crafted for durability, comfort, and performance with
-            clean industrial lines.
-          </p>
-          <CTAButton text="Know More" href="/aboutus" />
+        <article className="relative col-span-1 md:col-span-3 row-span-2 md:row-span-2 lg:row-span-2 rounded-lg  ring-1 ring-white/10 overflow-hidden p-5 lg:p-10">
+          {/* Background Image */}
+          <Image
+            src="/stock/stock3.png" // Replace with your image path
+            alt="Trinity Medtech Equipment"
+            fill
+            className="object-cover"
+            quality={90}
+            priority
+          />
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[black]/95 via-[black]/85 to-[black]/70" />
+
+          {/* Content */}
+          <div className="relative z-10">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white">
+              <span className="text-green-700">Trinity</span> Medtech LLC
+            </h3>
+            <p className="my-4 text-white/75 max-w-md text-sm md:text-base">
+              Equipment crafted for durability, comfort, and performance with
+              clean industrial lines.
+            </p>
+            <CTAButton
+              text="Know More"
+              href="/aboutus"
+              color="transparent"
+              borderColor="white"
+              hoverBorderColor="white"
+            />
+          </div>
         </article>
 
         {/* Tall product image */}
-        <figure className="relative col-span-1 md:col-span-3 row-span-3 rounded-2xl overflow-hidden group">
+        <figure className="relative col-span-1 md:col-span-3 row-span-3 rounded-lg overflow-hidden group">
           <Image
             src="/stock/stock6.png"
             alt="Skillrun treadmill"
@@ -64,7 +86,7 @@ export default function BentoShowcase() {
         </figure>
 
         {/* Square tile: athlete */}
-        <figure className="relative col-span-1 md:col-span-3 row-span-2 rounded-2xl overflow-hidden group">
+        <figure className="relative col-span-1 md:col-span-3 row-span-2 rounded-lg overflow-hidden group">
           <Image
             src="/stock/stock7.png"
             alt="Athlete warmup"
@@ -96,7 +118,9 @@ export default function BentoShowcase() {
               EXPLORE OUR PARTNER BRANDS
             </h4>
             <p className="mt-1 text-white/80 max-w-xl text-xs md:text-sm">
-              Discover our carefully selected partner brands that stand at the forefront of sports medicine, rehabilitation, and fitness innovation.
+              Discover our carefully selected partner brands that stand at the
+              forefront of sports medicine, rehabilitation, and fitness
+              innovation.
             </p>
             <CTAButton text="Explore" href="/brands" />
           </div>
