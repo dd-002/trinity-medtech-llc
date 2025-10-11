@@ -4,7 +4,7 @@ import CTAButton from "../CTAButton";
 
 export default function BentoShowcase() {
   return (
-    <section className="mx-auto w-full px-5 md:px-20 lg:px-40 pt-10 md:pt-20 lg:pt-32 pb-10 bg-[#f7f8f4] mt-6 rounded-t-lg">
+    <section className="mx-auto w-full px-5 md:px-10 lg:px-20 pt-10 md:pt-20 lg:pt-32 pb-10 bg-[#f7f8f4] mt-6 rounded-t-lg">
       {/* Heading */}
       <header className="mx-4 md:mx-16 lg:mx-32 mb-12">
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-black tracking-tight">
@@ -32,7 +32,7 @@ export default function BentoShowcase() {
                       grid-cols-1 md:grid-cols-6 auto-rows-[160px] md:auto-rows-[200px] lg:auto-rows-[220px]"
       >
         {/* Lead text card */}
-        <article className=" relative col-span-1 md:col-span-3 row-span-2 md:row-span-2 lg:row-span-1 rounded-2xl bg-[#13470c] ring-1 ring-white/10 overflow-hidden p-5 lg:p-10 ">
+        <article className=" relative col-span-1 md:col-span-3 row-span-2 md:row-span-2 lg:row-span-2 rounded-2xl bg-[#13470c] ring-1 ring-white/10 overflow-hidden p-5 lg:p-10 ">
           <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white">
             Trinity Medtech LLC
           </h3>
