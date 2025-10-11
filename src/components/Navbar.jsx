@@ -22,7 +22,7 @@ export default function Navbar() {
           height={8}
           className="object-contain"
         />
-        <span className="font-bold">Trinity </span>
+        <span className="font-bold text-xl text-green-700">TMT </span>
       </div>
 
       {/* Desktop Menu */}
