@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
 
-export default function StoriesCarousel({
+export default function ProductCarousel({
   stories = [],
   delay = 4000,
   cardGap = 16,
@@ -13,10 +13,12 @@ export default function StoriesCarousel({
   const total = stories.length;
   if (!total) return null;
 
-  const slides = [...stories, ...stories]; // duplicate for seamless loop
+  const slides = [...stories, ...stories, ...stories]; // Triple for better seamless loop
   const trackRef = useRef(null);
   const progressIntervalRef = useRef(null);
   const cardWidthRef = useRef(0);
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef(null);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
@@ -45,51 +47,79 @@ export default function StoriesCarousel({
     };
   }, [stories]);
 
-  // Initialize scroll position to middle for seamless loop
+  // Initialize scroll position to middle set (second copy)
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
+    
     requestAnimationFrame(() => {
-      track.scrollLeft = track.scrollWidth / 2;
       const step = cardWidthRef.current + cardGap;
-      const idx = Math.round(track.scrollLeft / step) % total;
-      setActiveIndex((idx + total) % total);
+      // Start at the beginning of the second set
+      track.scrollLeft = total * step;
+      setActiveIndex(0);
     });
   }, [stories, cardGap, total]);
+
+  // Seamless loop repositioning
+  const handleLoopReset = () => {
+    const track = trackRef.current;
+    if (!track || isScrollingRef.current) return;
+
+    const step = cardWidthRef.current + cardGap;
+    const scrollPos = track.scrollLeft;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    
+    // Calculate which set we're in
+    const currentSet = Math.floor(scrollPos / (total * step));
+    
+    // Reset to middle set if we're in first or last set
+    if (currentSet === 0 || currentSet === 2) {
+      const currentIndex = Math.round(scrollPos / step) % total;
+      const newScrollPos = total * step + currentIndex * step;
+      track.scrollLeft = newScrollPos;
+    }
+  };
 
   // Scroll helpers
   const scrollNext = () => {
     const track = trackRef.current;
-    if (!track) return;
+    if (!track || isScrollingRef.current) return;
+    
+    isScrollingRef.current = true;
     const step = cardWidthRef.current + cardGap;
+    
     track.scrollBy({ left: step, behavior: "smooth" });
+    setProgress(0);
 
-    setTimeout(() => {
-      if (track.scrollLeft >= track.scrollWidth / 2 - 1) {
-        track.scrollLeft -= track.scrollWidth / 2;
-      }
+    // Wait for smooth scroll to complete
+    if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    scrollTimeoutRef.current = setTimeout(() => {
+      handleLoopReset();
+      
       const idx = Math.round(track.scrollLeft / step) % total;
-      setActiveIndex((idx + total) % total);
-      setProgress(0);
-    }, 520);
+      setActiveIndex(idx);
+      isScrollingRef.current = false;
+    }, 600);
   };
 
   const scrollPrev = () => {
     const track = trackRef.current;
-    if (!track) return;
+    if (!track || isScrollingRef.current) return;
+    
+    isScrollingRef.current = true;
     const step = cardWidthRef.current + cardGap;
-
-    if (track.scrollLeft <= 0) track.scrollLeft += track.scrollWidth / 2;
+    
     track.scrollBy({ left: -step, behavior: "smooth" });
+    setProgress(0);
 
-    setTimeout(() => {
-      if (track.scrollLeft >= track.scrollWidth / 2 - 1) {
-        track.scrollLeft -= track.scrollWidth / 2;
-      }
+    if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    scrollTimeoutRef.current = setTimeout(() => {
+      handleLoopReset();
+      
       const idx = Math.round(track.scrollLeft / step) % total;
-      setActiveIndex((idx + total) % total);
-      setProgress(0);
-    }, 520);
+      setActiveIndex(idx);
+      isScrollingRef.current = false;
+    }, 600);
   };
 
   // Sync active index while user scrolls manually
@@ -97,20 +127,36 @@ export default function StoriesCarousel({
     const track = trackRef.current;
     if (!track) return;
     let rafId = null;
+    let userScrollTimeout = null;
 
     const onScroll = () => {
       if (rafId) cancelAnimationFrame(rafId);
+      
       rafId = requestAnimationFrame(() => {
         const step = cardWidthRef.current + cardGap;
         const idx = Math.round(track.scrollLeft / step) % total;
-        setActiveIndex((idx + total) % total);
+        setActiveIndex(idx);
+        
+        // Reset progress on manual scroll
+        if (!isScrollingRef.current) {
+          setProgress(0);
+        }
       });
+
+      // Detect when user stops scrolling
+      if (userScrollTimeout) clearTimeout(userScrollTimeout);
+      userScrollTimeout = setTimeout(() => {
+        if (!isScrollingRef.current) {
+          handleLoopReset();
+        }
+      }, 150);
     };
 
     track.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       track.removeEventListener("scroll", onScroll);
       if (rafId) cancelAnimationFrame(rafId);
+      if (userScrollTimeout) clearTimeout(userScrollTimeout);
     };
   }, [cardGap, total]);
 
@@ -133,13 +179,19 @@ export default function StoriesCarousel({
     }, tickMs);
 
     return () => {
-      if (progressIntervalRef.current)
-        clearInterval(progressIntervalRef.current);
+      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
     };
-  }, [delay, total, activeIndex]);
+  }, [delay, total]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    };
+  }, []);
 
   return (
-    <section className="relative w-full overflow-hidden py-8 bg-[#f7f8f4] ">
+    <section className="relative w-full overflow-hidden py-8 bg-[#d2f0d2]">
       <div className="relative mx-auto pl-2">
         {/* Track */}
         <div
@@ -155,7 +207,6 @@ export default function StoriesCarousel({
             <div
               key={`${s.id}-${idx}`}
               className="snap-start flex-shrink-0 w-[300px] sm:w-[300px] md:w-[400px] lg:w-[500px] h-[400px] sm:h-[400px] md:h-[550px] rounded-lg overflow-hidden flex flex-col cursor-pointer hover:-translate-y-3 transition-all duration-300"
-              onClick={() => setProgress(0)}
             >
               {/* Image Section - Takes 60% of height */}
               <div className="relative h-[60%] w-full">
@@ -169,7 +220,7 @@ export default function StoriesCarousel({
               </div>
 
               {/* Yellow Content Section - Takes 40% of height */}
-              <div className="h-[40%] bg-[#FFD600] p-6 flex flex-col justify-between">
+              <div className="h-[40%] bg-[#349334] p-6 flex flex-col justify-between">
                 <div>
                   {s.subtitle && (
                     <h2 className="text-black text-2xl sm:text-3xl font-bold mb-3 uppercase tracking-tight">
@@ -207,17 +258,18 @@ export default function StoriesCarousel({
           <button
             aria-label="Previous slide"
             onClick={scrollPrev}
-            className="p-2 grid place-items-center text-black "
+            className="p-2 grid place-items-center text-black disabled:opacity-50"
+            disabled={isScrollingRef.current}
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-200 group-hover:-translate-x-1" />
           </button>
 
           {/* Slide indicators */}
-          <div className="flex items-center gap-2 sm:gap-3 ">
+          <div className="flex items-center gap-2 sm:gap-3">
             {stories.map((_, i) => (
               <div
                 key={i}
-                className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ease-out  ${
+                className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ease-out ${
                   i === activeIndex
                     ? "w-8 sm:w-10 bg-[#244220]"
                     : "w-3 sm:w-4 bg-[#b6b6b6]"
@@ -230,7 +282,8 @@ export default function StoriesCarousel({
           <button
             aria-label="Next slide"
             onClick={scrollNext}
-            className="p-2 grid place-items-center text-black"
+            className="p-2 grid place-items-center text-black disabled:opacity-50"
+            disabled={isScrollingRef.current}
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-200 group-hover:translate-x-1" />
           </button>
