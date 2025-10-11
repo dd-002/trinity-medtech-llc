@@ -8,7 +8,6 @@ import StoriesCarousel from "@/components/home/Stories";
 import BioHero from "@/components/home/StoriesHero";
 import BrandLogoSection from "@/components/home/BrandSection";
 import Footer from "@/components/Footer";
-import FAQSection from "@/components/FAQ";
 
 const STORIES = [
   {
@@ -76,17 +75,11 @@ const STORIES = [
   },
 ];
 
-export default function HomePage() {
+export default function ProductsPage() {
   return (
     <main className="relative min-h-screen  overflow-hidden">
       <Navbar />
       <Hero />
-      <BentoShowcase />
-      <BrandLogoSection />
-      <BioHero />
-      <StoriesCarousel stories={STORIES} delay={5000} visibleCount={3} />
-      <FAQSection />
-      <Footer/>
     </main>
   );
 }

@@ -40,7 +40,7 @@ export default function Hero() {
   const next = () => setIndex((i) => (i + 1) % total);
 
   return (
-    <section className="relative isolate w-full min-h-screen md:min-h-screen lg:min-h-screen overflow-hidden rounded-[18px] pt-[420px] pb-[30px] md:pt-[500px]">
+    <section className="relative isolate w-full min-h-[98vh] md:min-h-[98vh] lg:min-h-[98vh] overflow-hidden rounded-[18px] pt-[450px] md:pt-[500px]">
       {/* Background video */}
       <video
         ref={videoRef}

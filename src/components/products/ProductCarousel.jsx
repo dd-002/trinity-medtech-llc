@@ -154,31 +154,48 @@ export default function StoriesCarousel({
           {slides.map((s, idx) => (
             <div
               key={`${s.id}-${idx}`}
-              className="snap-start flex-shrink-0 w-[300px] sm:w-[300px] md:w-[400px] lg:w-[500px] h-[400px] sm:h-[400px] md:h-[550px] rounded-lg overflow-hidden relative cursor-pointer hover:-translate-y-3 transition-all duration-300 "
+              className="snap-start flex-shrink-0 w-[300px] sm:w-[300px] md:w-[400px] lg:w-[500px] h-[400px] sm:h-[400px] md:h-[550px] rounded-lg overflow-hidden flex flex-col cursor-pointer hover:-translate-y-3 transition-all duration-300"
               onClick={() => setProgress(0)}
             >
-              <Image
-                src={s.image}
-                alt={s.title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width:640px) 70vw, (max-width:1024px) 45vw, 30vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-              <div className="absolute left-4 bottom-4 right-4">
-                {s.subtitle && (
-                  <span className="inline-block text-[#228611] text-xs sm:text-sm px-2 py-0.5 font-semibold">
-                    {s.subtitle}
-                  </span>
-                )}
-                <div className="mt-2 flex items-center justify-between gap-2 px-2">
-                  <h3 className="text-white text-lg sm:text-xl md:text-2xl font-semibold drop-shadow-md truncate">
-                    {s.title}
-                  </h3>
-                  {s.href && (
-                    <CTAButton href={s.href} text={<ChevronRight />} />
+              {/* Image Section - Takes 60% of height */}
+              <div className="relative h-[60%] w-full">
+                <Image
+                  src={s.image}
+                  alt={s.title}
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  sizes="(max-width:640px) 70vw, (max-width:1024px) 45vw, 30vw"
+                />
+              </div>
+
+              {/* Yellow Content Section - Takes 40% of height */}
+              <div className="h-[40%] bg-[#FFD600] p-6 flex flex-col justify-between">
+                <div>
+                  {s.subtitle && (
+                    <h2 className="text-black text-2xl sm:text-3xl font-bold mb-3 uppercase tracking-tight">
+                      {s.subtitle}
+                    </h2>
                   )}
+                  <p className="text-black text-sm sm:text-base leading-relaxed">
+                    {s.title}
+                  </p>
                 </div>
+
+                {s.href && (
+                  <CTAButton
+                    href={s.href}
+                    text={
+                      <span className="flex items-center gap-2">
+                        DISCOVER MORE <ChevronRight className="w-4 h-4" />
+                      </span>
+                    }
+                    normalColor="transparent"
+                    hoverColor="#228611"
+                    normalBorder="border-2 border-black"
+                    hoverBorder="border-2 border-[#228611]"
+                    className="w-fit px-6 py-2.5 rounded-md text-black hover:text-white font-semibold text-sm transition-all duration-300"
+                  />
+                )}
               </div>
             </div>
           ))}

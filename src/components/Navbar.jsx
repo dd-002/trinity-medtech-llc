@@ -12,7 +12,7 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[94%] md:w-[85%] bg-white/90 backdrop-blur-md shadow-lg rounded-2xl px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md shadow-lg rounded-2xl px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300">
       {/* Logo */}
       <div className="flex items-center space-x-3">
         <Image
@@ -22,7 +22,7 @@ export default function Navbar() {
           height={8}
           className="object-contain"
         />
-        <span className="font-bold">Trinity </span>
+        <span className="font-bold text-xl text-green-700">TMT </span>
       </div>
 
       {/* Desktop Menu */}
@@ -44,30 +44,30 @@ export default function Navbar() {
           <div
             className="invisible opacity-0 translate-y-2 scale-[0.98]
                group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100
-               absolute left-1/2 -translate-x-1/2 top-[36px]
+               absolute left-1/2 -translate-x-1/3 top-[36px]
                transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto"
           >
-            <div className="pointer-events-auto mt-3 w-[920px] max-w-[92vw] rounded-2xl border border-gray-200 bg-white shadow-xl p-6 origin-top">
+            <div className="pointer-events-auto mt-3 w-max max-w-[min(920px,92vw)] rounded-2xl border border-gray-200 bg-white shadow-xl p-6 origin-top">
               <div className="grid grid-cols-4 gap-6 text-sm">
                 <div>
                   <p className="mb-3 text-gray-500">Home Gym Equipment</p>
                   <ul className="space-y-2">
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Treadmills
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Bikes
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Ellipticals
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Rowers
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Stair Climbers
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Multi Gyms
                     </li>
                   </ul>
@@ -75,19 +75,19 @@ export default function Navbar() {
                 <div>
                   <p className="mb-3 text-gray-500">Strength</p>
                   <ul className="space-y-2">
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Barbells & Plates
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Racks
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Benches
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Dumbbells & Kettlebells
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Bundles
                     </li>
                   </ul>
@@ -95,22 +95,22 @@ export default function Navbar() {
                 <div>
                   <p className="mb-3 text-gray-500">Accessories</p>
                   <ul className="space-y-2">
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Fitness accessories
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Bands
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Mats & Pads
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Add‑ons
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Storage racks
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Bags & Gear
                     </li>
                   </ul>
@@ -118,16 +118,16 @@ export default function Navbar() {
                 <div>
                   <p className="mb-3 text-gray-500">Training Type</p>
                   <ul className="space-y-2">
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Cardio
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Strength
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Functional
                     </li>
-                    <li className="hover:text-green-700 cursor-pointer">
+                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                       Flexibility
                     </li>
                   </ul>
@@ -157,30 +157,30 @@ export default function Navbar() {
                absolute left-1/2 -translate-x-1/2 top-[36px]
                transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto"
           >
-            <div className="pointer-events-auto mt-3 w-[920px] max-w-[92vw] rounded-2xl border border-gray-200 bg-white shadow-xl p-6 origin-top">
+            <div className="pointer-events-auto mt-3 w-max min-w-[200px] max-w-[min(400px,92vw)] rounded-2xl border border-gray-200 bg-white shadow-xl p-6 origin-top">
               <ul className="grid grid-cols-1 gap-2 text-sm">
-                <li className="hover:text-green-700 cursor-pointer">
+                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                   h/p/cosmos
                 </li>
-                <li className="hover:text-green-700 cursor-pointer">Cosmed</li>
-                <li className="hover:text-green-700 cursor-pointer">Contemplas</li>
-                <li className="hover:text-green-700 cursor-pointer">Ergoline</li>
-                <li className="hover:text-green-700 cursor-pointer">
+                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">Cosmed</li>
+                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">Contemplas</li>
+                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">Ergoline</li>
+                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                   Zebris
                 </li>
-                <li className="hover:text-green-700 cursor-pointer">
+                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                   Kinvent
                 </li>
-                <li className="hover:text-green-700 cursor-pointer">
+                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                   Humacnorm
                 </li>
-                <li className="hover:text-green-700 cursor-pointer">
+                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                   Ametris
                 </li>
-                <li className="hover:text-green-700 cursor-pointer">
+                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                   CTN
                 </li>
-                <li className="hover:text-green-700 cursor-pointer">
+                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
                   Cellit
                 </li>
               </ul>
