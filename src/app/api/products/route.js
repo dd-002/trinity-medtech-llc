@@ -61,8 +61,8 @@ export async function GET(
 
     // --- Execute Queries ---
     const [dataResults, countResults] = await Promise.all([
-      db.all<ProductDB>(dataQuery, params),
-      db.get<{ total: number }>(countQuery, countParams),
+      db.all(dataQuery, params),
+      db.get(countQuery, countParams),
     ]);
 
     const totalItems = countResults?.total ?? 0;
