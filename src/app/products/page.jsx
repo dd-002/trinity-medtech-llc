@@ -8,6 +8,7 @@ import BrandSection from "@/components/products/BrandSection";
 import BrandLogoSection from "@/components/home/BrandSection";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactUs";
+import BentoShowcase from "@/components/products/Bento";
 
 const STORIES = [
   {
@@ -81,6 +82,7 @@ export default function ProductsPage() {
       <Navbar />
       <Hero />
       <BrandSection />
+      <BentoShowcase />
       <ProductCarousel stories={STORIES} />
       <BrandLogoSection />
       <ContactSection />
