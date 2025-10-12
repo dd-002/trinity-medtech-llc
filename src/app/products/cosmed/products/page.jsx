@@ -122,7 +122,7 @@ function ProductsPageContent() {
         {/* Main Content */}
         <section className="flex-1 lg:ml-6">
           <h1 className="text-4xl font-bold mb-8">
-            From the House of <span className="text-green-700">COSMED</span>
+            From the House of <span className="text-green-700 font-black">COSMED</span>
           </h1>
 
           {loading ? (
