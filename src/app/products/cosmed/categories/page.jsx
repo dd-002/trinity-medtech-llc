@@ -120,28 +120,50 @@ function ProductsPageContent() {
       <div className="flex flex-col lg:flex-row container mx-auto px-4 md:px-10 py-20 gap-8">
         {/* Sidebar */}
         <aside
-          className={`fixed lg:sticky top-24 left-0 h-full lg:h-[80vh] w-64 bg-white shadow-lg transform 
-            ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} 
-            transition-transform duration-300 ease-in-out z-40 
-            lg:translate-x-0 lg:w-1/5 rounded-xl`}
+          className={`fixed lg:sticky top-24 left-0 h-full lg:h-[80vh] w-64 
+    bg-white
+    transform ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} 
+    transition-transform duration-300 ease-in-out z-40 
+    lg:translate-x-0 lg:w-1/5 
+    rounded-lg border-2 border-gray-100`}
           style={{ minHeight: "600px" }}
         >
           <div className="p-6 h-full overflow-y-auto">
-            <h2 className="text-xl font-semibold mb-6 text-green-700">
-              Categories
-            </h2>
-            <div className="flex flex-col space-y-3">
+            <h2 className="text-xl font-bold mb-6 text-gray-900">Categories</h2>
+
+            <div className="flex flex-col space-y-2">
               {categories.map((cat) => (
                 <button
                   key={cat.key}
                   onClick={() => handleCategoryChange(cat.key)}
-                  className={`text-left px-3 py-2 rounded-lg border transition-colors ${
-                    category === cat.key
-                      ? "bg-green-700 text-white border-green-700"
-                      : "bg-white text-gray-700 hover:bg-green-50 border-gray-200"
-                  }`}
+                  className={`flex items-center justify-between
+            text-left px-4 py-3 rounded-lg
+            font-medium text-sm
+            transition-colors duration-200
+            ${
+              category === cat.key
+                ? "bg-green-800 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200"
+            }`}
                 >
-                  {cat.label}
+                  <span>{cat.label}</span>
+
+                  {/* Chevron arrow for selected state */}
+                  {category === cat.key && (
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  )}
                 </button>
               ))}
             </div>
@@ -152,7 +174,7 @@ function ProductsPageContent() {
         <section className="flex-1 lg:ml-6">
           <h1 className="text-4xl font-bold mb-8">
             From the House of{" "}
-            <span className="text-green-700 font-black">COSMED</span>
+            <span className="text-green-700 font-black text-5xl">COSMED</span>
           </h1>
 
           {loading ? (
@@ -172,7 +194,7 @@ function ProductsPageContent() {
                 )}
                 {!hasMore && (
                   <p className="text-gray-500 text-sm mt-2">
-                    You’ve reached the end of the list.
+                    You've reached the end of the list.
                   </p>
                 )}
               </div>

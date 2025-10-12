@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function ProductCard({ product }) {
   return (
     <Link href={`/products/${product.id}`} className="group block">
-      <div className="bg-[#deebd1] rounded-lg overflow-hidden transition-shadow hover:shadow-lg">
+      <div className="bg-[#deebd1] rounded-lg overflow-hidden ">
         {/* Product Image */}
         <div className="relative w-full h-64 rounded-t-lg overflow-hidden">
           <Image
