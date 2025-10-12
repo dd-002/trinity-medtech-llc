@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,11 +13,13 @@ function ProductsPageContent() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [totalProducts, setTotalProducts] = useState(0);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
 
   const category = searchParams.get("category") || "all";
-  const page = parseInt(searchParams.get("page") || "1");
   const itemsPerPage = 12;
+  const pageRef = useRef(1);
+  const loaderRef = useRef(null);
 
   const categories = [
     { key: "all", label: "All Products" },
@@ -30,51 +32,70 @@ function ProductsPageContent() {
     { key: "Software", label: "Software" },
   ];
 
-  const handleCategoryChange = (cat) => {
-    const params = new URLSearchParams(searchParams.toString());
-    if (cat === "all") params.delete("category");
-    else params.set("category", cat);
-    params.set("page", "1");
-    router.push(`?${params.toString()}`, { scroll: false });
-    setSidebarOpen(false);
+  // Fetch products
+  const fetchProducts = async (pageNum = 1, reset = false) => {
+    if (reset) setLoading(true);
+    else setLoadingMore(true);
+
+    try {
+      const queryParams = new URLSearchParams({
+        category: category !== "all" ? category : "",
+        limit: itemsPerPage.toString(),
+        page: pageNum.toString(),
+      });
+
+      const res = await fetch(`/api/products?${queryParams.toString()}`);
+      const data = await res.json();
+
+      const newProducts = data.data || [];
+      setProducts((prev) => (reset ? newProducts : [...prev, ...newProducts]));
+
+      const totalItems = data.pagination?.totalItems || 0;
+      const totalPages = Math.ceil(totalItems / itemsPerPage);
+      setHasMore(pageNum < totalPages);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    } finally {
+      setLoading(false);
+      setLoadingMore(false);
+    }
   };
 
-  const handlePageChange = (newPage) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("page", newPage);
-    router.push(`?${params.toString()}`, { scroll: false });
-  };
-
+  // Fetch when category changes
   useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      try {
-        const queryParams = new URLSearchParams({
-          category: category !== "all" ? category : "",
-          limit: itemsPerPage.toString(),
-          page: page.toString(),
-        });
+    pageRef.current = 1;
+    setHasMore(true);
+    fetchProducts(1, true);
+  }, [category]);
 
-        const res = await fetch(`/api/products?${queryParams.toString()}`);
-        const data = await res.json();
-        setProducts(data.data || []);
-        setTotalProducts(data.pagination.totalItems || 0);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, [category, page]);
+  // Infinite scroll observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const first = entries[0];
+        if (first.isIntersecting && hasMore && !loadingMore) {
+          pageRef.current += 1;
+          fetchProducts(pageRef.current);
+        }
+      },
+      { threshold: 1 }
+    );
+    const currentLoader = loaderRef.current;
+    if (currentLoader) observer.observe(currentLoader);
+    return () => currentLoader && observer.unobserve(currentLoader);
+  }, [hasMore, loadingMore, category]);
 
   useEffect(() => {
     document.body.style.overflow = sidebarOpen ? "hidden" : "";
   }, [sidebarOpen]);
 
-  const totalPages = Math.ceil(totalProducts / itemsPerPage);
-  const paginationNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const handleCategoryChange = (cat) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (cat === "all") params.delete("category");
+    else params.set("category", cat);
+    router.push(`?${params.toString()}`, { scroll: false });
+    setSidebarOpen(false);
+  };
 
   return (
     <main className="relative min-h-screen bg-gray-50 overflow-hidden pt-15">
@@ -126,55 +147,26 @@ function ProductsPageContent() {
           </h1>
 
           {loading ? (
-            <p className="text-gray-500">Loading products...</p>
+            <div className="flex justify-center items-center h-64">
+              <div className="w-10 h-10 border-4 border-green-700 border-t-transparent rounded-full animate-spin"></div>
+            </div>
           ) : products.length === 0 ? (
             <p className="text-gray-500">No products found.</p>
           ) : (
             <>
               <ProductGrid products={products} itemsPerPage={itemsPerPage} />
 
-              {/* Pagination */}
-              {totalPages > 1 && (
-                <div className="flex flex-wrap justify-center items-center gap-2 mt-10">
-                  <button
-                    onClick={() => handlePageChange(page - 1)}
-                    disabled={page === 1}
-                    className={`px-4 py-2 rounded-md border ${
-                      page === 1
-                        ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                        : "bg-white text-green-700 border-green-700 hover:bg-green-50"
-                    }`}
-                  >
-                    Prev
-                  </button>
-
-                  {paginationNumbers.map((num) => (
-                    <button
-                      key={num}
-                      onClick={() => handlePageChange(num)}
-                      className={`px-4 py-2 rounded-md border transition-colors ${
-                        num === page
-                          ? "bg-green-700 text-white border-green-700"
-                          : "bg-white text-green-700 border-green-700 hover:bg-green-50"
-                      }`}
-                    >
-                      {num}
-                    </button>
-                  ))}
-
-                  <button
-                    onClick={() => handlePageChange(page + 1)}
-                    disabled={page === totalPages}
-                    className={`px-4 py-2 rounded-md border ${
-                      page === totalPages
-                        ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                        : "bg-white text-green-700 border-green-700 hover:bg-green-50"
-                    }`}
-                  >
-                    Next
-                  </button>
-                </div>
-              )}
+              {/* Infinite Scroll Loader */}
+              <div ref={loaderRef} className="flex justify-center py-10">
+                {loadingMore && (
+                  <div className="w-8 h-8 border-4 border-green-700 border-t-transparent rounded-full animate-spin"></div>
+                )}
+                {!hasMore && (
+                  <p className="text-gray-500 text-sm mt-2">
+                    You’ve reached the end of the list.
+                  </p>
+                )}
+              </div>
             </>
           )}
         </section>

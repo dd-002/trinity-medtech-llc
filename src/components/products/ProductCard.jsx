@@ -7,12 +7,12 @@ export default function ProductCard({ product }) {
     <Link href={`/products/${product.id}`} className="group block">
       <div className="bg-[#deebd1] rounded-lg overflow-hidden transition-shadow hover:shadow-lg">
         {/* Product Image */}
-        <div className="relative w-full h-64 rounded-xl overflow-hidden">
+        <div className="relative w-full h-64 rounded-t-lg overflow-hidden">
           <Image
             src={product.imageLink}
             alt={product.name}
             fill
-            className="object-cover transition-transform duration-300 hover:scale-105"
+            className="object-cover transition-transform duration-300"
           />
         </div>
 
