@@ -2,14 +2,12 @@
 
 import React from "react";
 import Hero from "@/components/home/Hero";
-import Navbar from "@/components/Navbar";
 import ProductCarousel from "@/components/products/ProductCarousel";
 import BrandSection from "@/components/products/BrandSection";
 import BrandLogoSection from "@/components/home/BrandSection";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactUs";
 import BentoShowcase from "@/components/products/Bento";
-import ProductGrid from "@/components/products/ProductGrid";
 
 const STORIES = [
   {
@@ -100,7 +98,6 @@ export default function ProductsPage() {
 
   return (
     <main className="relative min-h-screen  overflow-hidden">
-      <Navbar />
       <Hero />
       <BrandSection />
       <BentoShowcase />

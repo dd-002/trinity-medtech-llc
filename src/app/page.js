@@ -2,7 +2,6 @@
 
 import React from "react";
 import Hero from "@/components/home/Hero";
-import Navbar from "@/components/Navbar";
 import BentoShowcase from "@/components/home/BentoShowcase";
 import StoriesCarousel from "@/components/home/Stories";
 import BioHero from "@/components/home/StoriesHero";
@@ -79,7 +78,6 @@ const STORIES = [
 export default function HomePage() {
   return (
     <main className="relative min-h-screen  overflow-hidden">
-      <Navbar />
       <Hero />
       <BentoShowcase />
       <BrandLogoSection />

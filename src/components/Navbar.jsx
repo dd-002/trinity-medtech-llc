@@ -13,7 +13,7 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md shadow-lg rounded-2xl px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md shadow-lg rounded-md px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300 text-black">
       {/* Logo */}
       <div className="flex items-center space-x-3">
         <Image
@@ -57,7 +57,7 @@ export default function Navbar() {
               <ul className="grid grid-cols-1 gap-2 text-sm">
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/brands?brand=cosmed"
+                    href="/products/cosmed/"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Cosmed
@@ -66,7 +66,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/brands?brand=contemplas"
+                    href="/products/contemplas"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Contemplas
@@ -75,7 +75,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/brands?brand=ergoline"
+                    href="/products/ergoline"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Ergoline
@@ -84,7 +84,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/brands?brand=zebris"
+                    href="/products/zebris"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Zebris
@@ -93,7 +93,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/brands?brand=kinvent"
+                    href="/products/kinvent"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Kinvent
@@ -102,7 +102,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/brands?brand=humacnorm"
+                    href="/products/humacnorm"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Humacnorm
@@ -111,7 +111,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/brands?brand=ametris"
+                    href="/products/ametris"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Ametris
@@ -120,7 +120,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/brands?brand=ctn"
+                    href="/products/ctn"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     CTN
@@ -129,7 +129,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/brands?brand=cellit"
+                    href="/products/cellit"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Cellit
