@@ -87,7 +87,7 @@ export default function BrandSection() {
               </div>
 
               {/* Yellow Content Section */}
-              <div className="bg-[#B0CE88] p-6 flex flex-col justify-between min-h-[240px]">
+              <div className="bg-[#6ee76e] p-6 flex flex-col justify-between min-h-[240px]">
                 <div>
                   <h3 className="text-xl font-bold text-black mb-3 tracking-wide">
                     {category.title}
