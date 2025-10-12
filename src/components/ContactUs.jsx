@@ -7,7 +7,7 @@ import CTAButton from "./CTAButton";
 
 export default function ContactSection() {
   return (
-    <section className="relative h-[500px] lg:h-[600px] w-full overflow-hidden">
+    <section className="relative h-screen lg:h-screen w-full overflow-hidden">
       {/* ✅ Optimized Background Image */}
       <Image
         src="/stock/stock8.jpg"
@@ -21,7 +21,7 @@ export default function ContactSection() {
       <div className="absolute inset-0 bg-gray-900/60" />
 
       {/* Content Container */}
-      <div className="relative h-full flex items-center">
+      <div className="relative h-full flex items-center ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-2xl">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-wide">
