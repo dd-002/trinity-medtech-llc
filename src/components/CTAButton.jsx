@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 export default function CTAButton({
   text,
@@ -12,7 +13,7 @@ export default function CTAButton({
   textColor = "white",
 }) {
   return (
-    <a
+    <Link
       href={href}
       style={{
         "--normal-bg": color,
@@ -61,6 +62,6 @@ export default function CTAButton({
       >
         {text}
       </span>
-    </a>
+    </Link>
   );
 }

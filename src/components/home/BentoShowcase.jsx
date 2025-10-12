@@ -28,7 +28,7 @@ export default function BentoShowcase() {
 
       {/* Grid */}
       <div
-        className="mx-4 md:mx-16 lg:mx-32 mb-12 grid gap-4 md:gap-6 lg:gap-8
+        className="mx-4 md:mx-16 lg:mx-32 mb-12 grid gap-2
                       grid-cols-1 md:grid-cols-6 auto-rows-[160px] md:auto-rows-[200px] lg:auto-rows-[220px]"
       >
         {/* Lead text card */}
@@ -105,7 +105,7 @@ export default function BentoShowcase() {
         </figure>
 
         {/* Wide tile bottom */}
-        <figure className="relative col-span-1 md:col-span-6 row-span-2 md:row-span-1 rounded-lg overflow-hidden group">
+        <figure className="relative col-span-1 md:col-span-6 lg:col-span-3 row-span-2 md:row-span-1 rounded-lg overflow-hidden group">
           <Image
             src="/stock/stock2.jpg"
             alt="Excite line"

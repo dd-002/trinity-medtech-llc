@@ -3,11 +3,12 @@
 import React from "react";
 import Hero from "@/components/home/Hero";
 import Navbar from "@/components/Navbar";
-import BentoShowcase from "@/components/home/BentoShowcase";
-import StoriesCarousel from "@/components/home/Stories";
-import BioHero from "@/components/home/StoriesHero";
+import ProductCarousel from "@/components/products/ProductCarousel";
+import BrandSection from "@/components/products/BrandSection";
 import BrandLogoSection from "@/components/home/BrandSection";
 import Footer from "@/components/Footer";
+import ContactSection from "@/components/ContactUs";
+import BentoShowcase from "@/components/products/Bento";
 
 const STORIES = [
   {
@@ -80,6 +81,12 @@ export default function ProductsPage() {
     <main className="relative min-h-screen  overflow-hidden">
       <Navbar />
       <Hero />
+      <BrandSection />
+      <BentoShowcase />
+      <ProductCarousel stories={STORIES} />
+      <BrandLogoSection />
+      <ContactSection />
+      <Footer />
     </main>
   );
 }
