@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductGrid from "@/components/products/ProductGrid";
 
-export default function ProductsPage() {
+function ProductsPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -57,7 +57,6 @@ export default function ProductsPage() {
 
         const res = await fetch(`/api/products?${queryParams.toString()}`);
         const data = await res.json();
-        console.log(data)
         setProducts(data.data || []);
         setTotalProducts(data.pagination.totalItems || 0);
       } catch (error) {
@@ -75,9 +74,6 @@ export default function ProductsPage() {
   }, [sidebarOpen]);
 
   const totalPages = Math.ceil(totalProducts / itemsPerPage);
-  console.log(totalPages)
-
-  // 👇 Generate pagination numbers (e.g., 1, 2, 3 …)
   const paginationNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
@@ -99,9 +95,7 @@ export default function ProductsPage() {
             ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} 
             transition-transform duration-300 ease-in-out z-40 
             lg:translate-x-0 lg:w-1/5 rounded-xl`}
-          style={{
-            minHeight: "600px",
-          }}
+          style={{ minHeight: "600px" }}
         >
           <div className="p-6 h-full overflow-y-auto">
             <h2 className="text-xl font-semibold mb-6 text-green-700">
@@ -139,10 +133,9 @@ export default function ProductsPage() {
             <>
               <ProductGrid products={products} itemsPerPage={itemsPerPage} />
 
-              {/* --- PAGINATION TABS BELOW --- */}
-              { totalPages>1 &&(
+              {/* Pagination */}
+              {totalPages > 1 && (
                 <div className="flex flex-wrap justify-center items-center gap-2 mt-10">
-                  {/* Prev Button */}
                   <button
                     onClick={() => handlePageChange(page - 1)}
                     disabled={page === 1}
@@ -155,7 +148,6 @@ export default function ProductsPage() {
                     Prev
                   </button>
 
-                  {/* Page Numbers */}
                   {paginationNumbers.map((num) => (
                     <button
                       key={num}
@@ -170,7 +162,6 @@ export default function ProductsPage() {
                     </button>
                   ))}
 
-                  {/* Next Button */}
                   <button
                     onClick={() => handlePageChange(page + 1)}
                     disabled={page === totalPages}
@@ -191,5 +182,13 @@ export default function ProductsPage() {
 
       <Footer />
     </main>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div className="text-center py-20 text-gray-600">Loading page...</div>}>
+      <ProductsPageContent />
+    </Suspense>
   );
 }
