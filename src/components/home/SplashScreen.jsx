@@ -29,8 +29,8 @@ export default function SplashScreen() {
         <Image
           src="/logos/logoc.svg"
           alt="Splash Logo"
-          width={200}
-          height={200}
+          width={100}
+          height={100}
           className="animate-pulse"
         />
       </div>
