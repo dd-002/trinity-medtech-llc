@@ -31,7 +31,7 @@ export default function ProductCard({ product }) {
 
           {/* Arrow Icon */}
           <div className="flex justify-end mt-4">
-            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 group-hover:bg-gray-900 group-hover:text-white transition-colors">
+            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-green-600 group-hover:bg-green-900 group-hover:text-white transition-colors">
               <svg
                 className="w-4 h-4"
                 fill="none"
