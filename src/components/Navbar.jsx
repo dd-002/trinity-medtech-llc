@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Menu, X, Phone, Search, ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,112 +30,7 @@ export default function Navbar() {
       <ul className="hidden md:flex items-center space-x-6 font-bold text-sm">
         {/* Products */}
         <li className="relative group">
-          <button
-            className="flex items-center gap-1 hover:text-green-700 relative z-10"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Products
-            <ChevronDown
-              size={16}
-              className="transition-transform duration-200 group-hover:rotate-180"
-            />
-          </button>
-
-          <div
-            className="invisible opacity-0 translate-y-2 scale-[0.98]
-               group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100
-               absolute left-1/2 -translate-x-1/3 top-[36px]
-               transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto"
-          >
-            <div className="pointer-events-auto mt-3 w-max max-w-[min(920px,92vw)] rounded-2xl border border-gray-200 bg-white shadow-xl p-6 origin-top">
-              <div className="grid grid-cols-4 gap-6 text-sm">
-                <div>
-                  <p className="mb-3 text-gray-500">Home Gym Equipment</p>
-                  <ul className="space-y-2">
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Treadmills
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Bikes
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Ellipticals
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Rowers
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Stair Climbers
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Multi Gyms
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="mb-3 text-gray-500">Strength</p>
-                  <ul className="space-y-2">
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Barbells & Plates
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Racks
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Benches
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Dumbbells & Kettlebells
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Bundles
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="mb-3 text-gray-500">Accessories</p>
-                  <ul className="space-y-2">
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Fitness accessories
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Bands
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Mats & Pads
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Add‑ons
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Storage racks
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Bags & Gear
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="mb-3 text-gray-500">Training Type</p>
-                  <ul className="space-y-2">
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Cardio
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Strength
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Functional
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                      Flexibility
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Link href={"/products"}>Products</Link>
         </li>
 
         {/* Brands */}
@@ -159,29 +55,85 @@ export default function Navbar() {
           >
             <div className="pointer-events-auto mt-3 w-max min-w-[200px] max-w-[min(400px,92vw)] rounded-2xl border border-gray-200 bg-white shadow-xl p-6 origin-top">
               <ul className="grid grid-cols-1 gap-2 text-sm">
-                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                  h/p/cosmos
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/brands?brand=cosmed"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Cosmed
+                  </Link>
                 </li>
-                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">Cosmed</li>
-                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">Contemplas</li>
-                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">Ergoline</li>
-                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                  Zebris
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/brands?brand=contemplas"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Contemplas
+                  </Link>
                 </li>
-                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                  Kinvent
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/brands?brand=ergoline"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Ergoline
+                  </Link>
                 </li>
-                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                  Humacnorm
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/brands?brand=zebris"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Zebris
+                  </Link>
                 </li>
-                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                  Ametris
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/brands?brand=kinvent"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Kinvent
+                  </Link>
                 </li>
-                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                  CTN
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/brands?brand=humacnorm"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Humacnorm
+                  </Link>
                 </li>
-                <li className="hover:text-green-700 cursor-pointer whitespace-nowrap">
-                  Cellit
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/brands?brand=ametris"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Ametris
+                  </Link>
+                </li>
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/brands?brand=ctn"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    CTN
+                  </Link>
+                </li>
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/brands?brand=cellit"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Cellit
+                  </Link>
                 </li>
               </ul>
             </div>
