@@ -57,7 +57,7 @@ export default function Navbar() {
               <ul className="grid grid-cols-1 gap-2 text-sm">
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/brands?brand=cosmed"
+                    href="/products/cosmed"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Cosmed
