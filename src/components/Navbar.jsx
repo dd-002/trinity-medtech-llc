@@ -48,12 +48,16 @@ export default function Navbar() {
           </button>
 
           <div
-            className="invisible opacity-0 translate-y-2 scale-[0.98]
-               group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100
-               absolute left-1/2 -translate-x-1/2 top-[36px]
-               transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto"
+            className="absolute left-1/2 -translate-x-1/2 top-full pt-3
+    opacity-0 invisible
+    group-hover:opacity-100 group-hover:visible
+    transition-all duration-200 ease-out
+  "
           >
-            <div className="pointer-events-auto mt-3 w-max min-w-[200px] max-w-[min(400px,92vw)] rounded-lg border border-gray-200 bg-white shadow-xl p-6 origin-top">
+            <div
+              className="pointer-events-auto w-max min-w-[200px] max-w-[min(400px,92vw)]
+      rounded-lg border border-gray-200 bg-white shadow-xl p-6 origin-top"
+            >
               <ul className="grid grid-cols-1 gap-2 text-sm">
                 <li className="whitespace-nowrap">
                   <Link
