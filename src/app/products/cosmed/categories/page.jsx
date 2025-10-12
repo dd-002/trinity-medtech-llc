@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductGrid from "@/components/products/ProductGrid";
 
@@ -99,8 +98,6 @@ function ProductsPageContent() {
 
   return (
     <main className="relative min-h-screen bg-gray-50 overflow-hidden pt-15">
-      <Navbar />
-
       {/* Mobile Sidebar Toggle */}
       <button
         className="lg:hidden fixed top-20 left-4 z-50 p-2 bg-green-700 text-white rounded-md shadow-md"
