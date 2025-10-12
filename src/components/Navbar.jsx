@@ -34,7 +34,7 @@ export default function Navbar() {
         </li>
 
         {/* Brands */}
-        <li className="relative group">
+        <li className="relative  group">
           <button
             className="flex items-center gap-1 hover:text-green-700 relative z-10"
             aria-haspopup="true"
@@ -53,7 +53,7 @@ export default function Navbar() {
                absolute left-1/2 -translate-x-1/2 top-[36px]
                transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto"
           >
-            <div className="pointer-events-auto mt-3 w-max min-w-[200px] max-w-[min(400px,92vw)] rounded-2xl border border-gray-200 bg-white shadow-xl p-6 origin-top">
+            <div className="pointer-events-auto mt-3 w-max min-w-[200px] max-w-[min(400px,92vw)] rounded-lg border border-gray-200 bg-white shadow-xl p-6 origin-top">
               <ul className="grid grid-cols-1 gap-2 text-sm">
                 <li className="whitespace-nowrap">
                   <Link
@@ -176,59 +176,12 @@ export default function Navbar() {
           <ul className="flex flex-col space-y-3 font-medium text-gray-800 text-sm w-full">
             {/* Products collapsible with height animation */}
             <li>
-              <button
+              <Link
+                href={"/products"}
                 className="w-full flex items-center justify-between hover:text-green-700"
-                onClick={() =>
-                  setMobileOpen((p) => ({ ...p, products: !p.products }))
-                }
-                aria-expanded={mobileOpen.products}
               >
                 <span>Products</span>
-                <ChevronDown
-                  size={18}
-                  className={`transition-transform duration-200 ${
-                    mobileOpen.products ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              <div
-                className={`grid overflow-hidden transition-all duration-200 ease-out ${
-                  mobileOpen.products
-                    ? "grid-rows-[1fr] opacity-100 mt-2"
-                    : "grid-rows-[0fr] opacity-0"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <div className="grid grid-cols-1 gap-3 text-[13px] text-gray-700">
-                    <div>
-                      <p className="text-gray-500 mb-2">Home Gym</p>
-                      <ul className="space-y-1 pl-3">
-                        <li className="hover:text-green-700">Treadmills</li>
-                        <li className="hover:text-green-700">Bikes</li>
-                        <li className="hover:text-green-700">Ellipticals</li>
-                        <li className="hover:text-green-700">Rowers</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="text-gray-500 mb-2">Strength</p>
-                      <ul className="space-y-1 pl-3">
-                        <li className="hover:text-green-700">Racks</li>
-                        <li className="hover:text-green-700">Benches</li>
-                        <li className="hover:text-green-700">Dumbbells</li>
-                        <li className="hover:text-green-700">Bundles</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="text-gray-500 mb-2">Accessories</p>
-                      <ul className="space-y-1 pl-3">
-                        <li className="hover:text-green-700">Bands</li>
-                        <li className="hover:text-green-700">Mats & Pads</li>
-                        <li className="hover:text-green-700">Storage</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </Link>
             </li>
 
             {/* Brands collapsible */}
@@ -257,13 +210,27 @@ export default function Navbar() {
               >
                 <div className="overflow-hidden">
                   <ul className="space-y-1 text-[13px] text-gray-700 pl-3">
-                    <li className="hover:text-green-700">Personal</li>
-                    <li className="hover:text-green-700">Artis</li>
-                    <li className="hover:text-green-700">Excite</li>
-                    <li className="hover:text-green-700">Skill</li>
-                    <li className="hover:text-green-700">Biostrength</li>
-                    <li className="hover:text-green-700">Pure Strength</li>
-                    <li className="hover:text-green-700">My Selection</li>
+                    {[
+                      { name: "Cosmed", href: "/products/cosmed" },
+                      { name: "Contemplas", href: "/products/contemplas" },
+                      { name: "Ergoline", href: "/products/ergoline" },
+                      { name: "Zebris", href: "/products/zebris" },
+                      { name: "Kinvent", href: "/products/kinvent" },
+                      { name: "Humacnorm", href: "/products/humacnorm" },
+                      { name: "Ametris", href: "/products/ametris" },
+                      { name: "CTN", href: "/products/ctn" },
+                      { name: "Cellit", href: "/products/cellit" },
+                    ].map((brand) => (
+                      <li key={brand.name}>
+                        <Link
+                          href={brand.href}
+                          className="block hover:text-green-700 py-1"
+                          onClick={() => setIsOpen(false)} // closes menu after navigation
+                        >
+                          {brand.name}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
