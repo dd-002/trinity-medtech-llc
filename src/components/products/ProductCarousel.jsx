@@ -51,7 +51,7 @@ export default function ProductCarousel({
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-    
+
     requestAnimationFrame(() => {
       const step = cardWidthRef.current + cardGap;
       // Start at the beginning of the second set
@@ -68,10 +68,10 @@ export default function ProductCarousel({
     const step = cardWidthRef.current + cardGap;
     const scrollPos = track.scrollLeft;
     const maxScroll = track.scrollWidth - track.clientWidth;
-    
+
     // Calculate which set we're in
     const currentSet = Math.floor(scrollPos / (total * step));
-    
+
     // Reset to middle set if we're in first or last set
     if (currentSet === 0 || currentSet === 2) {
       const currentIndex = Math.round(scrollPos / step) % total;
@@ -84,10 +84,10 @@ export default function ProductCarousel({
   const scrollNext = () => {
     const track = trackRef.current;
     if (!track || isScrollingRef.current) return;
-    
+
     isScrollingRef.current = true;
     const step = cardWidthRef.current + cardGap;
-    
+
     track.scrollBy({ left: step, behavior: "smooth" });
     setProgress(0);
 
@@ -95,7 +95,7 @@ export default function ProductCarousel({
     if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     scrollTimeoutRef.current = setTimeout(() => {
       handleLoopReset();
-      
+
       const idx = Math.round(track.scrollLeft / step) % total;
       setActiveIndex(idx);
       isScrollingRef.current = false;
@@ -105,17 +105,17 @@ export default function ProductCarousel({
   const scrollPrev = () => {
     const track = trackRef.current;
     if (!track || isScrollingRef.current) return;
-    
+
     isScrollingRef.current = true;
     const step = cardWidthRef.current + cardGap;
-    
+
     track.scrollBy({ left: -step, behavior: "smooth" });
     setProgress(0);
 
     if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     scrollTimeoutRef.current = setTimeout(() => {
       handleLoopReset();
-      
+
       const idx = Math.round(track.scrollLeft / step) % total;
       setActiveIndex(idx);
       isScrollingRef.current = false;
@@ -131,12 +131,12 @@ export default function ProductCarousel({
 
     const onScroll = () => {
       if (rafId) cancelAnimationFrame(rafId);
-      
+
       rafId = requestAnimationFrame(() => {
         const step = cardWidthRef.current + cardGap;
         const idx = Math.round(track.scrollLeft / step) % total;
         setActiveIndex(idx);
-        
+
         // Reset progress on manual scroll
         if (!isScrollingRef.current) {
           setProgress(0);
@@ -179,7 +179,8 @@ export default function ProductCarousel({
     }, tickMs);
 
     return () => {
-      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+      if (progressIntervalRef.current)
+        clearInterval(progressIntervalRef.current);
     };
   }, [delay, total]);
 
@@ -191,7 +192,9 @@ export default function ProductCarousel({
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden py-8 bg-[#d2f0d2]">
+    <section className="relative w-full overflow-hidden py-8 bg-white">
+      <div className="text-center text-7xl font-bold py-24 md:py-30 lg:py-50"> Browse By <span className="text-green-700">Brands</span></div>
+
       <div className="relative mx-auto pl-2">
         {/* Track */}
         <div
@@ -214,38 +217,34 @@ export default function ProductCarousel({
                   src={s.image}
                   alt={s.title}
                   fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  className="object-cover"
                   sizes="(max-width:640px) 70vw, (max-width:1024px) 45vw, 30vw"
                 />
               </div>
 
-              {/* Yellow Content Section - Takes 40% of height */}
-              <div className="h-[40%] bg-[#349334] p-6 flex flex-col justify-between">
+              <div className="h-[40%] bg-black p-6 flex flex-col justify-between">
                 <div>
                   {s.subtitle && (
-                    <h2 className="text-black text-2xl sm:text-3xl font-bold mb-3 uppercase tracking-tight">
+                    <h2 className="text-white text-2xl sm:text-3xl font-bold mb-3 uppercase tracking-tight">
                       {s.subtitle}
                     </h2>
                   )}
-                  <p className="text-black text-sm sm:text-base leading-relaxed">
+                  <p className="text-white text-sm sm:text-base leading-relaxed">
                     {s.title}
                   </p>
                 </div>
 
                 {s.href && (
-                  <CTAButton
-                    href={s.href}
-                    text={
-                      <span className="flex items-center gap-2">
-                        DISCOVER MORE <ChevronRight className="w-4 h-4" />
-                      </span>
-                    }
-                    normalColor="transparent"
-                    hoverColor="#228611"
-                    normalBorder="border-2 border-black"
-                    hoverBorder="border-2 border-[#228611]"
-                    className="w-fit px-6 py-2.5 rounded-md text-black hover:text-white font-semibold text-sm transition-all duration-300"
-                  />
+                  <div className="self-start">
+                    <CTAButton
+                      href={s.href}
+                      text="DISCOVER MORE"
+                      normalColor="transparent"
+                      hoverColor="green"
+                      borderColor="white"
+                      hoverBorderColor="white"
+                    />
+                  </div>
                 )}
               </div>
             </div>
