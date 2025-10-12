@@ -8,22 +8,11 @@ export default function BentoShowcase() {
       {/* Heading */}
       <header className="mx-4 md:mx-16 lg:mx-32 mb-12">
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-black tracking-tight">
-          Leading UAE in{" "}
+          Explore our{" "}
           <span className="text-[#237618]">
-            Sports Medicine & Rehabilitation
+           LineUp
           </span>
         </h2>
-        <p className="mt-4 max-w-3xl text-sm  text-black leading-relaxed">
-          Since 2007 Trinity has been a solution provider for Sports Medicine
-          and Rehabilitation for government offices and private companies.
-          Trinity is working with the vision to become the leader in providing
-          the best solution for Physical Therapy, Rehabilitation & Sports
-          medicine by providing reliable, quality products and services to the
-          UAE community. Trinity's growth has been remarkable, achieving high
-          turnovers almost every year since it was founded. An ambitious
-          investment plan is being implemented in order to sustain future growth
-          at similar rates.
-        </p>
       </header>
 
       {/* Grid */}
