@@ -5,14 +5,14 @@ import Link from "next/link";
 export default function ProductCard({ product }) {
   return (
     <Link href={`/products/${product.id}`} className="group block">
-      <div className="bg-[#d7dde2] rounded-lg overflow-hidden transition-shadow hover:shadow-lg">
+      <div className="bg-[#deebd1] rounded-lg overflow-hidden transition-shadow hover:shadow-lg">
         {/* Product Image */}
-        <div className="relative aspect-square bg-white p-6">
+        <div className="relative w-full h-64 rounded-xl overflow-hidden">
           <Image
             src={product.imageLink}
             alt={product.name}
             fill
-            className="object-contain  transition-transform duration-300"
+            className="object-cover transition-transform duration-300 hover:scale-105"
           />
         </div>
 
@@ -23,7 +23,11 @@ export default function ProductCard({ product }) {
           </h3>
 
           {/* Features List */}
-          <span className="flex-shrink-0 mt-1">{product.smallDesc}</span>
+          <span className="flex-shrink-0 mt-1">
+            {product.smallDesc?.length > 65
+              ? product.smallDesc.slice(0, 65) + "..."
+              : product.smallDesc}
+          </span>
 
           {/* Arrow Icon */}
           <div className="flex justify-end mt-4">
