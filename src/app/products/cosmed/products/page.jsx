@@ -10,18 +10,15 @@ export default function ProductsPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // States
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [totalProducts, setTotalProducts] = useState(0);
 
-  // URL params
   const category = searchParams.get("category") || "all";
   const page = parseInt(searchParams.get("page") || "1");
   const itemsPerPage = 12;
 
-  // Categories list
   const categories = [
     { key: "all", label: "All Products" },
     { key: "Cardio Pulmonary Exercise Test", label: "Cardio Pulmonary Exercise Test" },
@@ -33,24 +30,21 @@ export default function ProductsPage() {
     { key: "Software", label: "Software" },
   ];
 
-  // Handle category change
   const handleCategoryChange = (cat) => {
     const params = new URLSearchParams(searchParams.toString());
     if (cat === "all") params.delete("category");
     else params.set("category", cat);
-    params.set("page", "1"); // Reset to first page on category change
+    params.set("page", "1");
     router.push(`?${params.toString()}`, { scroll: false });
     setSidebarOpen(false);
   };
 
-  // Handle pagination change
   const handlePageChange = (newPage) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("page", newPage);
     router.push(`?${params.toString()}`, { scroll: false });
   };
 
-  // Fetch products from API
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
@@ -61,17 +55,14 @@ export default function ProductsPage() {
           page: page.toString(),
         });
 
-        // Example API endpoint (replace with your actual one)
         const res = await fetch(`/api/products?${queryParams.toString()}`);
         const data = await res.json();
-        console.log(data);
-
+        console.log(data)
         setProducts(data.data || []);
-        setTotalProducts(data.total || 0);
+        setTotalProducts(data.pagination.totalItems || 0);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
-        console.log(products)
         setLoading(false);
       }
     };
@@ -79,12 +70,15 @@ export default function ProductsPage() {
     fetchProducts();
   }, [category, page]);
 
-  // Manage body scroll on mobile menu open
   useEffect(() => {
     document.body.style.overflow = sidebarOpen ? "hidden" : "";
   }, [sidebarOpen]);
 
   const totalPages = Math.ceil(totalProducts / itemsPerPage);
+  console.log(totalPages)
+
+  // 👇 Generate pagination numbers (e.g., 1, 2, 3 …)
+  const paginationNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
     <main className="relative min-h-screen bg-gray-50 overflow-hidden pt-15">
@@ -145,9 +139,10 @@ export default function ProductsPage() {
             <>
               <ProductGrid products={products} itemsPerPage={itemsPerPage} />
 
-              {/* Pagination Controls */}
-              {totalPages > 1 && (
-                <div className="flex justify-center items-center space-x-4 mt-10">
+              {/* --- PAGINATION TABS BELOW --- */}
+              { totalPages>1 &&(
+                <div className="flex flex-wrap justify-center items-center gap-2 mt-10">
+                  {/* Prev Button */}
                   <button
                     onClick={() => handlePageChange(page - 1)}
                     disabled={page === 1}
@@ -160,10 +155,22 @@ export default function ProductsPage() {
                     Prev
                   </button>
 
-                  <span className="text-gray-600 font-medium">
-                    Page {page} of {totalPages}
-                  </span>
+                  {/* Page Numbers */}
+                  {paginationNumbers.map((num) => (
+                    <button
+                      key={num}
+                      onClick={() => handlePageChange(num)}
+                      className={`px-4 py-2 rounded-md border transition-colors ${
+                        num === page
+                          ? "bg-green-700 text-white border-green-700"
+                          : "bg-white text-green-700 border-green-700 hover:bg-green-50"
+                      }`}
+                    >
+                      {num}
+                    </button>
+                  ))}
 
+                  {/* Next Button */}
                   <button
                     onClick={() => handlePageChange(page + 1)}
                     disabled={page === totalPages}
