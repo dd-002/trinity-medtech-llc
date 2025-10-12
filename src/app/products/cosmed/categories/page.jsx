@@ -22,7 +22,10 @@ function ProductsPageContent() {
 
   const categories = [
     { key: "all", label: "All Products" },
-    { key: "Cardio Pulmonary Exercise Test", label: "Cardio Pulmonary Exercise Test" },
+    {
+      key: "Cardio Pulmonary Exercise Test",
+      label: "Cardio Pulmonary Exercise Test",
+    },
     { key: "Indirect Calorimetry", label: "Indirect Calorimetry" },
     { key: "Pulmonary Function Test", label: "Pulmonary Function Test" },
     { key: "Spirometer", label: "Spirometer" },
@@ -67,22 +70,30 @@ function ProductsPageContent() {
     fetchProducts(1, true);
   }, [category]);
 
-  // Infinite scroll observer
   useEffect(() => {
+    const loader = loaderRef.current;
+    if (!loader) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
-        const first = entries[0];
-        if (first.isIntersecting && hasMore && !loadingMore) {
+        const entry = entries[0];
+        if (entry.isIntersecting && hasMore && !loadingMore && !loading) {
+          setLoadingMore(true);
           pageRef.current += 1;
-          fetchProducts(pageRef.current);
+          fetchProducts(pageRef.current).finally(() => {
+            setLoadingMore(false);
+          });
         }
       },
-      { threshold: 1 }
+      { rootMargin: "200px" }
     );
-    const currentLoader = loaderRef.current;
-    if (currentLoader) observer.observe(currentLoader);
-    return () => currentLoader && observer.unobserve(currentLoader);
-  }, [hasMore, loadingMore, category]);
+
+    observer.observe(loader);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [hasMore, loadingMore, loading, category, fetchProducts]);
 
   useEffect(() => {
     document.body.style.overflow = sidebarOpen ? "hidden" : "";
@@ -140,7 +151,8 @@ function ProductsPageContent() {
         {/* Main Content */}
         <section className="flex-1 lg:ml-6">
           <h1 className="text-4xl font-bold mb-8">
-            From the House of <span className="text-green-700 font-black">COSMED</span>
+            From the House of{" "}
+            <span className="text-green-700 font-black">COSMED</span>
           </h1>
 
           {loading ? (
@@ -176,7 +188,11 @@ function ProductsPageContent() {
 
 export default function ProductsPage() {
   return (
-    <Suspense fallback={<div className="text-center py-20 text-gray-600">Loading page...</div>}>
+    <Suspense
+      fallback={
+        <div className="text-center py-20 text-gray-600">Loading page...</div>
+      }
+    >
       <ProductsPageContent />
     </Suspense>
   );
