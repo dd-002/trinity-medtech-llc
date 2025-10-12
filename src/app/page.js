@@ -8,6 +8,7 @@ import BioHero from "@/components/home/StoriesHero";
 import BrandLogoSection from "@/components/home/BrandSection";
 import Footer from "@/components/Footer";
 import FAQSection from "@/components/FAQ";
+import SplashScreen from "@/components/home/SplashScreen";
 
 const STORIES = [
   {
@@ -78,6 +79,7 @@ const STORIES = [
 export default function HomePage() {
   return (
     <main className="relative min-h-screen  overflow-hidden">
+      <SplashScreen/>
       <Hero />
       <BentoShowcase />
       <BrandLogoSection />

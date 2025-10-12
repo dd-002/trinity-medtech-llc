@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md shadow-lg rounded-md px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300 text-black">
       {/* Logo */}
-      <div className="flex items-center space-x-3">
+      <Link href="/" className="flex items-center space-x-3">
         <Image
           src="/logos/logoc.svg"
           alt="TechnoGym Logo"
@@ -24,7 +24,7 @@ export default function Navbar() {
           className="object-contain"
         />
         <span className="font-bold text-xl text-green-700">TMT </span>
-      </div>
+      </Link>
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex items-center space-x-6 font-bold text-sm">
