@@ -36,11 +36,7 @@ export default function ContactSection() {
               experts will get in touch to provide all the answers you need.
             </p>
 
-            <CTAButton text="Contact Us" href="/contact" />
-            <button className="bg-[#F8E71C] hover:bg-[#e6d419] text-black font-semibold px-8 py-3 rounded-none flex items-center transition-all duration-300 hover:translate-x-2">
-              <span className="mr-3">▸</span>
-              CONTACT&nbsp;US
-            </button>
+            <CTAButton text="Contact Us" href="/contact" borderColor="white" hoverBorderColor="white"/>
           </div>
         </div>
       </div>
