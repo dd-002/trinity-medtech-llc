@@ -13,7 +13,7 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md shadow-lg rounded-2xl px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md shadow-lg rounded-md px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300">
       {/* Logo */}
       <div className="flex items-center space-x-3">
         <Image
