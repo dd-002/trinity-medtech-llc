@@ -106,7 +106,7 @@ export default function BrandSection() {
   ];
 
   return (
-    <section className="bg-[#1a1a1a] py-16 px-4 sm:px-6 lg:px-8 mt-2 rounded-lg">
+    <section className="bg-[#1a1a1a] py-16 px-4 sm:px-6 lg:px-8 mt-2 rounded-xl">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 tracking-wide">
           Browse By
