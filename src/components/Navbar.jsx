@@ -13,7 +13,7 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-7xl bg-white  shadow-lg rounded-md px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300 text-black">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-500 w-[calc(100%-2rem)] max-w-7xl bg-white  shadow-lg rounded-md px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300 text-black">
       {/* Logo */}
       <Link href="/" className="flex items-center space-x-3">
         <Image
@@ -277,14 +277,15 @@ export default function Navbar() {
               </div>
             </li>
 
-            <li className="hover:text-green-700 cursor-pointer">FAQ</li>
-            <li className="hover:text-green-700 cursor-pointer">Stories</li>
-            <li className="hover:text-green-700 cursor-pointer">Membership</li>
+            <li className="hover:text-green-700 cursor-pointer"><Link href={"/faq"}>FAQ</Link></li>
+            <li className="hover:text-green-700 cursor-pointer"><Link href={"/stories"}>Stories</Link></li>
             <li className="hover:text-green-700 cursor-pointer flex items-center space-x-1">
-              <span>Business</span>
+              <Link href={"/contactus"}>
+                            <span>Get In Touch</span>
               <span className="text-xs bg-green-400 text-black px-1 rounded-sm">
                 ↗
               </span>
+              </Link>
             </li>
           </ul>
 
