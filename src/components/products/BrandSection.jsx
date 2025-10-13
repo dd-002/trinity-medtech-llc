@@ -14,7 +14,7 @@ export default function BrandSection() {
         "COSMED, since 1980, designs innovative solutions for Lung function, Metabolic, and Body Composition Assessment.",
       image: "/products/brands/cosmed/cycleergometers.webp",
       linkText: "BROWSE COSMED",
-      href: "/products/cosmed",
+      href: "/products/cosmed/categories",
     },
     {
       title: "h/p/cosmos",
@@ -22,7 +22,7 @@ export default function BrandSection() {
         "h/p/cosmos stands for convincing technology, advanced design and safety in the production of running machines",
       image: "/products/brands/hpcosmos/treadmill.png",
       linkText: "BROWSE h/p/cosmos",
-      href: "/products/hpcosmos",
+      href: "/products/hpcosmos/categories",
     },
     {
       title: "Contemplas",
