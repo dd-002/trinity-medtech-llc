@@ -72,7 +72,7 @@ export default function Navbar() {
                     href="/products/hpcosmos/categoried"
                     className="hover:text-green-700 cursor-pointer"
                   >
-                    Cosmed
+                    h/p/cosmos
                   </Link>
                 </li>
 
