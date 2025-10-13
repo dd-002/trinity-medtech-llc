@@ -7,7 +7,7 @@ export default function BentoShowcase() {
     <section className="mx-auto w-full px-5 md:px-10 lg:px-20 pt-10 md:pt-20 lg:pt-32 pb-10 bg-[#f7f8f4] mt-6 rounded-t-lg">
       {/* Heading */}
       <header className="mx-4 md:mx-16 lg:mx-32 mb-12">
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-black tracking-tight">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-black tracking-tight">
           Leading UAE in{" "}
           <span className="text-[#237618]">
             Sports Medicine & Rehabilitation
@@ -32,26 +32,23 @@ export default function BentoShowcase() {
                       grid-cols-1 md:grid-cols-6 auto-rows-[160px] md:auto-rows-[200px] lg:auto-rows-[220px]"
       >
         {/* Lead text card */}
-        <article className="relative col-span-1 md:col-span-3 row-span-2 md:row-span-2 lg:row-span-2 rounded-lg  ring-1 ring-white/10 overflow-hidden p-5 lg:p-10">
-          {/* Background Image */}
-          <Image
-            src="/stock/stock3.png" // Replace with your image path
-            alt="Trinity Medtech Equipment"
-            fill
-            className="object-cover"
-            quality={90}
-            priority
-          />
-
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[black]/95 via-[black]/85 to-[black]/70" />
-
+        <article className="relative bg-[#c3edc3] col-span-1 md:col-span-3 row-span-2 md:row-span-2 lg:row-span-2 rounded-lg  ring-1 ring-white/10 overflow-hidden p-5 lg:p-10">
           {/* Content */}
           <div className="relative z-10">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white">
-              <span className="text-green-700">Trinity</span> Medtech LLC
-            </h3>
-            <p className="my-4 text-white/75 max-w-md text-sm md:text-base">
+            <Link href="/" className="flex items-center space-x-3">
+              <Image
+                src="/logos/logoc.svg"
+                alt="TechnoGym Logo"
+                width={20}
+                height={8}
+                className="object-contain"
+              />
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-black">
+                <span className="text-green-700">Trinity</span> Medtech LLC
+              </h3>
+            </Link>
+
+            <p className="my-4 text-black max-w-md text-sm md:text-base">
               Equipment crafted for durability, comfort, and performance with
               clean industrial lines.
             </p>
@@ -59,8 +56,10 @@ export default function BentoShowcase() {
               text="Know More"
               href="/aboutus"
               color="transparent"
-              borderColor="white"
-              hoverBorderColor="white"
+              hoverColor="#92e892"
+              borderColor="transparent"
+              hoverBorderColor="transparent"
+              textColor="black"
             />
           </div>
         </article>
@@ -68,40 +67,42 @@ export default function BentoShowcase() {
         {/* Tall product image */}
         <figure className="relative col-span-1 md:col-span-3 row-span-3 rounded-lg overflow-hidden group">
           <Image
-            src="/stock/stock6.png"
+            src="/stock/stock5.jpg"
             alt="Skillrun treadmill"
             fill
             priority
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+            className="object-cover transition-transform duration-500 ease-out "
           />
-          <figcaption className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-60 group-hover:opacity-70 transition-opacity" />
+          <figcaption className="absolute inset-0  to-transparent  transition-opacity" />
           <div className="absolute left-4 bottom-4 md:left-5 md:bottom-5">
             <span className="inline-flex items-center rounded-lg bg-[#13470c] text-black text-xs md:text-sm font-semibold px-2 py-1 text-white">
-              Cosmed
+              Contemplas
             </span>
             <h4 className="mt-1 text-white text-lg md:text-xl font-semibold">
-              SKILLRUN
+              Sprint Analysis
             </h4>
           </div>
         </figure>
 
         {/* Square tile: athlete */}
         <figure className="relative col-span-1 md:col-span-3 row-span-2 rounded-lg overflow-hidden group">
-          <Image
-            src="/stock/stock7.png"
-            alt="Athlete warmup"
-            fill
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          <div className="absolute left-4 bottom-4 md:left-5">
-            <span className="inline-flex items-center rounded-lg border border-white/30 backdrop-blur px-2 py-1 text-xs text-white">
-              Strength
-            </span>
-            <h4 className="mt-1 text-white text-lg font-semibold">
-              Pure Strength
-            </h4>
-          </div>
+          <Link href={"/products/contemplas"}>
+            <Image
+              src="/stock/stock4.jpg"
+              alt="Athlete warmup"
+              fill
+              className="object-cover transition-transform duration-500 ease-out"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+            <div className="absolute left-4 bottom-4 md:left-5">
+              <span className="inline-flex items-center rounded-lg border border-white/30 backdrop-blur px-2 py-1 text-xs text-white">
+                Contemplas
+              </span>
+              <h4 className="mt-1 text-white text-lg font-semibold">
+                Swimming Analysis
+              </h4>
+            </div>
+          </Link>
         </figure>
 
         {/* Wide tile bottom */}
@@ -110,7 +111,7 @@ export default function BentoShowcase() {
             src="/stock/stock2.jpg"
             alt="Excite line"
             fill
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+            className="object-cover transition-transform duration-500 ease-out "
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
           <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2">
@@ -122,7 +123,7 @@ export default function BentoShowcase() {
               forefront of sports medicine, rehabilitation, and fitness
               innovation.
             </p>
-            <CTAButton text="Explore" href="/brands" />
+            <CTAButton text="Explore" href="/brands" hoverColor="black" borderColor="transparent" hoverBorderColor="transparent"/>
           </div>
         </figure>
       </div>
