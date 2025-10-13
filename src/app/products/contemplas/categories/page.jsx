@@ -22,6 +22,10 @@ function ProductsPageContent() {
 
   const categories = [
     { key: "all", label: "All Products" },
+    {
+      key: "Solutions",
+      label: "Solutions",
+    }
   ];
 
   // Fetch products
@@ -32,7 +36,7 @@ function ProductsPageContent() {
     try {
       const queryParams = new URLSearchParams({
         category: category !== "all" ? category : "",
-        brand:"humacnorm",
+        brand:"contemplas",
         limit: itemsPerPage.toString(),
         page: pageNum.toString(),
       });
@@ -165,7 +169,7 @@ function ProductsPageContent() {
         <section className="flex-1 lg:ml-6">
           <h1 className="text-4xl font-bold mb-8">
             From the House of{" "}
-            <span className="text-green-700 font-black text-5xl">HUMAC NORM</span>
+            <span className="text-green-700 font-black text-5xl">CONTEMPLAS</span>
           </h1>
 
           {loading ? (
