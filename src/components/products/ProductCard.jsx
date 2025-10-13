@@ -19,7 +19,9 @@ export default function ProductCard({ product }) {
         {/* Product Info */}
         <div className="p-6">
           <h3 className="text-xl font-semibold text-gray-900 mb-2">
-            {product.name}
+            {product.name?.length > 20
+              ? product.name.slice(0, 25) + "..."
+              : product.name}
           </h3>
 
           {/* Features List */}
@@ -28,25 +30,6 @@ export default function ProductCard({ product }) {
               ? product.smallDesc.slice(0, 65) + "..."
               : product.smallDesc}
           </span>
-
-          {/* Arrow Icon */}
-          <div className="flex justify-end mt-4">
-            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-green-600 group-hover:bg-green-900 group-hover:text-white transition-colors">
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </div>
-          </div>
         </div>
       </div>
     </Link>
