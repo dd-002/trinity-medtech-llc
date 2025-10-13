@@ -1,64 +1,132 @@
+"use client";
+
 import React from "react";
 import CTAButton from "../CTAButton";
 import Image from "next/image";
+import Hero from "./Hero";
+import { Link } from "lucide-react";
 
 export default function BrandSection() {
   const categories = [
     {
-      title: "STRENGTH",
+      title: "Cosmed",
       description:
-        "Elevate training with reliable equipment that seamlessly connects to a whole...",
-      image: "/images/strength-equipment.jpg",
-      buttonText: "BROWSE EQUIPMENT",
+        "COSMED, since 1980, designs innovative solutions for Lung function, Metabolic, and Body Composition Assessment.",
+      image: "/products/brands/cosmed/cycleergometers.webp",
+      linkText: "BROWSE COSMED",
+      href: "/products/cosmed",
     },
     {
-      title: "FUNCTIONAL",
+      title: "h/p/cosmos",
       description:
-        "Equipment designed around the needs of those who aim at excellence in functiona...",
-      image: "/images/functional-equipment.jpg",
-      buttonText: "BROWSE EQUIPMENT",
+        "h/p/cosmos stands for convincing technology, advanced design and safety in the production of running machines",
+      image: "/products/brands/hpcosmos/treadmill.png",
+      linkText: "BROWSE h/p/cosmos",
+      href: "/products/hpcosmos",
     },
     {
-      title: "MEDICAL",
+      title: "Contemplas",
       description:
-        "Superior results for patients and athletes alike, with objective evaluation and...",
-      image: "/images/medical-equipment.jpg",
-      buttonText: "BROWSE ALL EQUIPMENT",
+        "Professional video analysis systems for fast and precise visualisation through to high-end markerless motion analysis.",
+      image: "/products/brands/contemplas/swimming.png",
+      linkText: "BROWSE Contemplas",
+      href: "/products/contemplas",
     },
     {
-      title: "PILATES",
+      title: "Ergoline",
       description:
-        "Sleek aesthetics, fine craftsmanship and top performance honor the Pilates...",
-      image: "/images/pilates-equipment.jpg",
-      buttonText: "BROWSE EQUIPMENT",
+        "State-of-the-art microelectronics, precise measuring and control technology, and constructive solutions ",
+      image: "/products/brands/ergoline/treadmill.png",
+      linkText: "BROWSE Ergoline",
+      href: "/products/ergoline",
     },
     {
-      title: "PILATES",
+      title: "Zebris",
       description:
-        "Sleek aesthetics, fine craftsmanship and top performance honor the Pilates...",
-      image: "/images/pilates-equipment.jpg",
-      buttonText: "BROWSE EQUIPMENT",
+        "As an innovative technology company, zebris Medical GmbH looks back on more than 30 years of experience in biomechanics.",
+      image: "/products/brands/zebris/zebris.png",
+      linkText: "BROWSE Zebris",
+      href: "/products/zebris",
     },
-        {
-      title: "PILATES",
+    {
+      title: "Kinvent",
       description:
-        "Sleek aesthetics, fine craftsmanship and top performance honor the Pilates...",
-      image: "/images/pilates-equipment.jpg",
-      buttonText: "BROWSE EQUIPMENT",
+        "Kinvent's expertise lies in creating innovative biomechanical solutions for performance, rehabilitation, and scientific research.",
+      image: "/products/brands/kinvent/kinvent.png",
+      linkText: "BROWSE Kinvent",
+      href: "/products/kinvent",
     },
-        {
-      title: "PILATES",
+    {
+      title: "HumacNorm",
       description:
-        "Sleek aesthetics, fine craftsmanship and top performance honor the Pilates...",
-      image: "/images/pilates-equipment.jpg",
-      buttonText: "BROWSE EQUIPMENT",
+        "Humac Norm delivers advanced isokinetic dynamometer systems for precise evaluation and rehabilitation of human performance.",
+      image: "/products/brands/humacnorm/humacnorm.png",
+      linkText: "BROWSE HumacNorm",
+      href: "/products/humacnorm",
     },
-        {
-      title: "PILATES",
+    {
+      title: "Ametris (ActiGraph)",
       description:
-        "Sleek aesthetics, fine craftsmanship and top performance honor the Pilates...",
-      image: "/images/pilates-equipment.jpg",
-      buttonText: "BROWSE EQUIPMENT",
+        "Ametris offers cutting-edge wearable technology through ActiGraph, enabling precise measurement and analysis of human activity and sleep patterns.",
+      image: "/products/brands/ametris/actigraph.png",
+      linkText: "BROWSE Ametris",
+      href: "/products/ametris",
+    },
+    {
+      title: "CTN",
+      description:
+        "CTN provides advanced medical and research instrumentation solutions, specializing in precise data collection .",
+      image: "/products/brands/ctn/ctn.png",
+      linkText: "BROWSE CTN",
+      href: "/products/ctn",
+    },
+    {
+      title: "Cellit",
+      description:
+        "Cellit delivers innovative IHHT  systems for cellular-level health optimization .",
+      image: "/products/brands/cellit/cellit.png",
+      linkText: "BROWSE Cellit",
+      href: "/products/cellit",
+    },
+    {
+      title: "Neurosoft TMS",
+      description:
+        "Neurosoft is a global leader in Transcranial Magnetic Stimulation (TMS) technology,",
+      image: "/products/brands/neurosoft/neurosoft.png",
+      linkText: "BROWSE Neurosoft TMS",
+      href: "/products/neurosoft",
+    },
+    {
+      title: "Movendo",
+      description:
+        "Movendo Technology combines robotics and AI to deliver intelligent rehabilitation solutions .",
+      image: "/products/brands/movendo/movendo.png",
+      linkText: "BROWSE Movendo",
+      href: "/products/movendo",
+    },
+    {
+      title: "True Fitness",
+      description:
+        "TRUE Fitness offers premium commercial and home gym equipment with a focus on durability, design, and biomechanical excellence.",
+      image: "/products/brands/truefitness/truefitness.png",
+      linkText: "BROWSE True Fitness",
+      href: "/products/truefitness",
+    },
+    {
+      title: "Aktiv Fitness",
+      description:
+        "Aktiv Fitness creates versatile training environments with smart storage, functional training systems, and integrated fitness solutions.",
+      image: "/products/brands/aktivfitness/aktivfitness.png",
+      linkText: "BROWSE Aktiv Fitness",
+      href: "/products/aktivfitness",
+    },
+    {
+      title: "Yanre Fitness",
+      description:
+        "Yanre Fitness manufactures high-quality, durable gym equipment trusted by commercial fitness centers worldwide for its ergonomic design and performance.",
+      image: "/products/brands/yanre/yanre.png",
+      linkText: "BROWSE Yanre Fitness",
+      href: "/products/yanre",
     },
   ];
 
@@ -68,21 +136,22 @@ export default function BrandSection() {
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 tracking-wide">
           Browse By
           <br />
-          BRANDS
+          <span className="text-[#6fe86f]">BRANDS</span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <div
-              key={index}
+              key={category.title}
               className="group relative overflow-hidden rounded-lg"
             >
-              {/* Image Container */}
-              <div className="relative h-64 overflow-hidden bg-gray-600 rounded-lg transition-transform duration-3">
-                <img
+              {/* Image Container with deterministic size to avoid layout shifts */}
+              <div className="relative h-64 w-full overflow-hidden rounded-t-lg bg-gray-600">
+                <Image
                   src={category.image}
                   alt={category.title}
-                  className="w-full h-full object-cover transition-transform duration-300 "
+                  fill
+                  style={{ objectFit: "cover" }}
                 />
               </div>
 
@@ -96,11 +165,7 @@ export default function BrandSection() {
                     {category.description}
                   </p>
                 </div>
-
-                <button className="flex items-center text-black font-semibold text-sm hover:translate-x-2 transition-transform duration-200">
-                  <span className="mr-2">▸</span>
-                  {category.buttonText}
-                </button>
+               <CTAButton href={category.href} text={category.linkText} textColor="black" hoverColor="#53b653"/>
               </div>
             </div>
           ))}
