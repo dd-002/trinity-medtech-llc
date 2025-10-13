@@ -42,7 +42,6 @@ function ProductsPageContent() {
     try {
       const queryParams = new URLSearchParams({
         category: category !== "all" ? category : "",
-        brand:"cosmed",
         limit: itemsPerPage.toString(),
         page: pageNum.toString(),
       });

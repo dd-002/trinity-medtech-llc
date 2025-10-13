@@ -193,7 +193,7 @@ export default function ProductCarousel({
 
   return (
     <section className="relative w-full overflow-hidden py-8 bg-white">
-      <div className="text-center text-7xl font-bold py-24 md:py-30 lg:py-50"> Browse By <span className="text-green-700">Brands</span></div>
+      <div className="text-center text-7xl font-bold py-24 md:py-30 lg:py-50"> Explore Featured <span className="text-green-700">Products</span></div>
 
       <div className="relative mx-auto pl-2">
         {/* Track */}
@@ -212,7 +212,7 @@ export default function ProductCarousel({
               className="snap-start flex-shrink-0 w-[300px] sm:w-[300px] md:w-[400px] lg:w-[500px] h-[400px] sm:h-[400px] md:h-[550px] rounded-lg overflow-hidden flex flex-col cursor-pointer hover:-translate-y-3 transition-all duration-300"
             >
               {/* Image Section - Takes 60% of height */}
-              <div className="relative h-[60%] w-full">
+              <div className="relative h-[90%] w-full">
                 <Image
                   src={s.image}
                   alt={s.title}
@@ -222,7 +222,7 @@ export default function ProductCarousel({
                 />
               </div>
 
-              <div className="h-[40%] bg-black p-6 flex flex-col justify-between">
+              <div className="h-[10%] bg-black p-6 flex flex-col justify-between">
                 <div>
                   {s.subtitle && (
                     <h2 className="text-white text-2xl sm:text-3xl font-bold mb-3 uppercase tracking-tight">
