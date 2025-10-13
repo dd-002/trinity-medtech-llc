@@ -6,21 +6,10 @@ import CTAButton from "@/components/CTAButton";
 
 const slides = [
   {
-    title: "Trinity",
+    title: "Products",
     blurb:
-      "Solution Provider for Sports Medicine & Rehabilitation for government offices and private companies.",
-    cta: "Discover more",
-  },
-  {
-    title: "SKILLRUN",
-    blurb:
-      "Pro-grade treadmill performance with power and speed training in one platform.",
-    cta: "Explore SKILLRUN",
-  },
-  {
-    title: "EXCITE LINE",
-    blurb: "Connected cardio equipment designed for engagement and results.",
-    cta: "See the line",
+      "Explore our Pro-grade products from brands across the world",
+    cta: "Explore",
   },
 ];
 
@@ -51,7 +40,7 @@ export default function Hero() {
         playsInline
         poster="/video/poster.jpg"
       >
-        <source src="/video/hero.mp4" type="video/mp4" />
+        <source src="/video/stock2.mp4" type="video/mp4" />
       </video>
 
       {/* Overlays */}

@@ -74,26 +74,17 @@ export default function Footer() {
         {/* Link sections */}
         <div className="mt-16 grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-6">
           <FooterGroup
-            title="Products"
+            title="Trinity"
             links={[
-              { label: "Shop All", href: "#" },
-              { label: "Brands", href: "#" },
-            ]}
-          />
-          <FooterGroup
-            title="About"
-            links={[
-              { label: "Science", href: "#" },
-              { label: "Sustainability", href: "#" },
+              { label: "Shop All", href: "/products" },
+              { label: "About Us", href: "/aboutus" },
             ]}
           />
           <FooterGroup
             title="Help"
             links={[
-              { label: "Help", href: "#" },
-              { label: "Contact", href: "#" },
-              { label: "My Account", href: "#" },
-              { label: "International", href: "#" },
+              { label: "Help", href: "/faq" },
+              { label: "Contact", href: "/contactus" },
             ]}
           />
           <FooterGroup
@@ -102,14 +93,13 @@ export default function Footer() {
               { label: "Instagram", href: "#" },
               { label: "Twitter", href: "#" },
               { label: "LinkedIn", href: "#" },
-              { label: "Refer", href: "#" },
             ]}
           />
           <FooterGroup
             title="Legal"
             links={[
-              { label: "Terms + Conditions", href: "#" },
-              { label: "Privacy Policy", href: "#" },
+              { label: "Terms + Conditions", href: "/tnc" },
+              { label: "Privacy Policy", href: "/privacy" },
             ]}
           />
         </div>

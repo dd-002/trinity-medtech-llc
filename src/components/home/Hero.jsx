@@ -10,17 +10,14 @@ const slides = [
     blurb:
       "Solution Provider for Sports Medicine & Rehabilitation for government offices and private companies.",
     cta: "Discover more",
+    link: "/aboutus",
   },
   {
-    title: "SKILLRUN",
+    title: "Explore Brands",
     blurb:
-      "Pro-grade treadmill performance with power and speed training in one platform.",
-    cta: "Explore SKILLRUN",
-  },
-  {
-    title: "EXCITE LINE",
-    blurb: "Connected cardio equipment designed for engagement and results.",
-    cta: "See the line",
+      "Top tier brands from all around the world",
+    cta: "Explore Brands",
+    link: "/products",
   },
 ];
 
@@ -79,7 +76,7 @@ export default function Hero() {
             key={`cta-${index}`}
             className="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4 transition-all duration-500 ease-out delay-200"
           >
-            <CTAButton text={slides[index].cta} href="#discover" />
+            <CTAButton text={slides[index].cta} href={slides[index].link} />
           </div>
         </div>
       </div>
