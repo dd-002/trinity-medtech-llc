@@ -3,8 +3,7 @@
 import React from "react";
 import CTAButton from "../CTAButton";
 import Image from "next/image";
-import Hero from "./Hero";
-import { Link } from "lucide-react";
+
 
 export default function BrandSection() {
   const categories = [
@@ -103,30 +102,6 @@ export default function BrandSection() {
       image: "/products/brands/movendo/movendo.png",
       linkText: "BROWSE Movendo",
       href: "/products/movendo",
-    },
-    {
-      title: "True Fitness",
-      description:
-        "TRUE Fitness offers premium commercial and home gym equipment with a focus on durability, design, and biomechanical excellence.",
-      image: "/products/brands/truefitness/truefitness.png",
-      linkText: "BROWSE True Fitness",
-      href: "/products/truefitness",
-    },
-    {
-      title: "Aktiv Fitness",
-      description:
-        "Aktiv Fitness creates versatile training environments with smart storage, functional training systems, and integrated fitness solutions.",
-      image: "/products/brands/aktivfitness/aktivfitness.png",
-      linkText: "BROWSE Aktiv Fitness",
-      href: "/products/aktivfitness",
-    },
-    {
-      title: "Yanre Fitness",
-      description:
-        "Yanre Fitness manufactures high-quality, durable gym equipment trusted by commercial fitness centers worldwide for its ergonomic design and performance.",
-      image: "/products/brands/yanre/yanre.png",
-      linkText: "BROWSE Yanre Fitness",
-      href: "/products/yanre",
     },
   ];
 
