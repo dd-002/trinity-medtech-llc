@@ -13,7 +13,7 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-7xl bg-white/90 backdrop-blur-md shadow-lg rounded-md px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300 text-black">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-7xl bg-white  shadow-lg rounded-md px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300 text-black">
       {/* Logo */}
       <Link href="/" className="flex items-center space-x-3">
         <Image
@@ -65,6 +65,15 @@ export default function Navbar() {
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Cosmed
+                  </Link>
+                </li>
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/hpcosmos/"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    h/p/cosmos
                   </Link>
                 </li>
 
@@ -137,6 +146,23 @@ export default function Navbar() {
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Cellit
+                  </Link>
+                </li>
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/neurosoft"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Neurosoft
+                  </Link>
+                </li>
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/movendo"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Movendo
                   </Link>
                 </li>
               </ul>
@@ -216,6 +242,7 @@ export default function Navbar() {
                   <ul className="space-y-1 text-[13px] text-gray-700 pl-3">
                     {[
                       { name: "Cosmed", href: "/products/cosmed" },
+                      { name: "h/p/cosmos", href: "/products/hpcosmos" },
                       { name: "Contemplas", href: "/products/contemplas" },
                       { name: "Ergoline", href: "/products/ergoline" },
                       { name: "Zebris", href: "/products/zebris" },
@@ -224,6 +251,8 @@ export default function Navbar() {
                       { name: "Ametris", href: "/products/ametris" },
                       { name: "CTN", href: "/products/ctn" },
                       { name: "Cellit", href: "/products/cellit" },
+                      { name: "Neurosoft", href: "/products/neurosoft" },
+                      { name: "Movendo", href: "/products/movendo" },
                     ].map((brand) => (
                       <li key={brand.name}>
                         <Link

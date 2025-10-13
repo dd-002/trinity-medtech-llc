@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Hero from "@/components/home/Hero";
+import Hero from "@/components/products/Hero";
 import ProductCarousel from "@/components/products/ProductCarousel";
 import BrandSection from "@/components/products/BrandSection";
 import BrandLogoSection from "@/components/home/BrandSection";
