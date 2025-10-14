@@ -69,7 +69,7 @@ export default function Navbar() {
                 </li>
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/hpcosmos/categoried"
+                    href="/products/hpcosmos/categories"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     h/p/cosmos
@@ -78,7 +78,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/contemplas"
+                    href="/products/contemplas/categories"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Contemplas
@@ -87,7 +87,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/ergoline"
+                    href="/products/ergoline/categories"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Ergoline
@@ -96,7 +96,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/zebris"
+                    href="/products/zebris/categories"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Zebris
@@ -105,7 +105,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/kinvent"
+                    href="/products/kinvent/categories"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Kinvent
@@ -114,7 +114,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/humacnorm"
+                    href="/products/humacnorm/categories"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Humacnorm
@@ -123,7 +123,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/ametris"
+                    href="/products/ametris/categories"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Ametris
@@ -132,7 +132,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/ctn"
+                    href="/products/ctn/categories"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     CTN
@@ -141,7 +141,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/cellit"
+                    href="/products/cellit/categories"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Cellit
@@ -149,7 +149,7 @@ export default function Navbar() {
                 </li>
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/neurosoft"
+                    href="/products/neurosoft/categories"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Neurosoft
@@ -158,7 +158,7 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/movendo"
+                    href="/products/movendo/categories"
                     className="hover:text-green-700 cursor-pointer"
                   >
                     Movendo
@@ -240,18 +240,18 @@ export default function Navbar() {
                 <div className="overflow-hidden">
                   <ul className="space-y-1 text-[13px] text-gray-700 pl-3">
                     {[
-                      { name: "Cosmed", href: "/products/cosmed" },
-                      { name: "h/p/cosmos", href: "/products/hpcosmos" },
-                      { name: "Contemplas", href: "/products/contemplas" },
-                      { name: "Ergoline", href: "/products/ergoline" },
-                      { name: "Zebris", href: "/products/zebris" },
-                      { name: "Kinvent", href: "/products/kinvent" },
-                      { name: "Humacnorm", href: "/products/humacnorm" },
-                      { name: "Ametris", href: "/products/ametris" },
-                      { name: "CTN", href: "/products/ctn" },
-                      { name: "Cellit", href: "/products/cellit" },
-                      { name: "Neurosoft", href: "/products/neurosoft" },
-                      { name: "Movendo", href: "/products/movendo" },
+                      { name: "Cosmed", href: "/products/cosmed/categories" },
+                      { name: "h/p/cosmos", href: "/products/hpcosmos/categories" },
+                      { name: "Contemplas", href: "/products/contemplas/categories" },
+                      { name: "Ergoline", href: "/products/ergoline/categories" },
+                      { name: "Zebris", href: "/products/zebris/categories" },
+                      { name: "Kinvent", href: "/products/kinvent/categories" },
+                      { name: "Humacnorm", href: "/products/humacnorm/categories" },
+                      { name: "Ametris", href: "/products/ametris/categories" },
+                      { name: "CTN", href: "/products/ctn/categories" },
+                      { name: "Cellit", href: "/products/cellit/categories" },
+                      { name: "Neurosoft", href: "/products/neurosoft/categories" },
+                      { name: "Movendo", href: "/products/movendo/categories" },
                     ].map((brand) => (
                       <li key={brand.name}>
                         <Link
