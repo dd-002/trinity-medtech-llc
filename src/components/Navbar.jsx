@@ -78,15 +78,6 @@ export default function Navbar() {
 
                 <li className="whitespace-nowrap">
                   <Link
-                    href="/products/hpcosmos/"
-                    className="hover:text-green-700 cursor-pointer"
-                  >
-                    h/p/cosmos
-                  </Link>
-                </li>
-
-                <li className="whitespace-nowrap">
-                  <Link
                     href="/products/contemplas"
                     className="hover:text-green-700 cursor-pointer"
                   >
