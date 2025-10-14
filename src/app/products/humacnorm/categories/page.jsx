@@ -22,16 +22,6 @@ function ProductsPageContent() {
 
   const categories = [
     { key: "all", label: "All Products" },
-    {
-      key: "Cardio Pulmonary Exercise Test",
-      label: "Cardio Pulmonary Exercise Test",
-    },
-    { key: "Indirect Calorimetry", label: "Indirect Calorimetry" },
-    { key: "Pulmonary Function Test", label: "Pulmonary Function Test" },
-    { key: "Spirometer", label: "Spirometer" },
-    { key: "ECG", label: "ECG" },
-    { key: "Ergometers", label: "Ergometers" },
-    { key: "Software", label: "Software" },
   ];
 
   // Fetch products
@@ -42,6 +32,7 @@ function ProductsPageContent() {
     try {
       const queryParams = new URLSearchParams({
         category: category !== "all" ? category : "",
+        brand:"humacnorm",
         limit: itemsPerPage.toString(),
         page: pageNum.toString(),
       });
@@ -174,7 +165,7 @@ function ProductsPageContent() {
         <section className="flex-1 lg:ml-6">
           <h1 className="text-4xl font-bold mb-8">
             From the House of{" "}
-            <span className="text-green-700 font-black text-5xl">COSMED</span>
+            <span className="text-green-700 font-black text-5xl">HUMAC NORM</span>
           </h1>
 
           {loading ? (
