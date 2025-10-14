@@ -4,13 +4,10 @@ import React from "react";
 import Image from "next/image";
 
 const companies = [
-  { name: "ArtOfCryo", logo: "/brands/artofcryo.jpeg" },
   { name: "Contemplas", logo: "/brands/contemplas.jpg" },
   { name: "Cosmed", logo: "/brands/cosmed.jpg" },
   { name: "Ergoline", logo: "/brands/ergoline.jpg" },
   { name: "hpcosmos", logo: "/brands/hpcosmos.jpeg" },
-  { name: "Oxyhealth", logo: "/brands/oxyhealth.jpg" },
-  { name: "Thera", logo: "/brands/thera.jpg" },
   { name: "Zebris", logo: "/brands/zebris.jpg" },
 ];
 
