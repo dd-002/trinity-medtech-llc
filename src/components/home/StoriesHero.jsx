@@ -4,15 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 
-// Simple random helpers (stable per render)
-const randomId = () => Math.floor(Math.random() * 1000) + 1;
-const randomLogo = (n) => `/logos/logoc.svg`; // square logo
-const randomHero = (n) => `/stock/stock2.jpg`; // big right image
 
 export default function BioHero() {
-  const seed = useMemo(randomId, []);
-  const logoSrc = useMemo(() => randomLogo(seed), [seed]);
-  const heroSrc = useMemo(() => randomHero(seed + 1), [seed]);
+  const logoSrc = '/logos/logob.svg';
+  const heroSrc = '/stock/stock2.jpg';
 
   return (
     <section className="w-full bg-[#F7F8F4]">
@@ -21,12 +16,12 @@ export default function BioHero() {
           {/* Left: brand + copy */}
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <div className="relative size-10  overflow-hidden ring-1 ring-black/10 bg-white">
+              <div className="relative size-5  overflow-hidden ring-1 ring-white bg-white">
                 <Image
                   src={logoSrc}
                   alt="Brand logo"
                   fill
-                  sizes="40px"
+                  sizes="20px"
                   className="object-cover"
                   priority
                 />

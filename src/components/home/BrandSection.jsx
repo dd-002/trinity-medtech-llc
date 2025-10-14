@@ -10,9 +10,7 @@ const companies = [
   { name: "Ergoline", logo: "/brands/ergoline.jpg" },
   { name: "hpcosmos", logo: "/brands/hpcosmos.jpeg" },
   { name: "Oxyhealth", logo: "/brands/oxyhealth.jpg" },
-  { name: "Proxomed", logo: "/brands/proxomed.jpg" },
   { name: "Thera", logo: "/brands/thera.jpg" },
-  { name: "Weyergrans", logo: "/brands/weyergrans.jpg" },
   { name: "Zebris", logo: "/brands/zebris.jpg" },
 ];
 

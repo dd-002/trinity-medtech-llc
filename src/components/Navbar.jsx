@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Menu, X, Phone, Search, ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +13,9 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[94%] md:w-[85%] bg-white/90 backdrop-blur-md shadow-lg rounded-2xl px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-500 w-[calc(100%-2rem)] max-w-7xl bg-white  shadow-lg rounded-md px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300 text-black">
       {/* Logo */}
-      <div className="flex items-center space-x-3">
+      <Link href="/" className="flex items-center space-x-3">
         <Image
           src="/logos/logoc.svg"
           alt="TechnoGym Logo"
@@ -22,123 +23,18 @@ export default function Navbar() {
           height={8}
           className="object-contain"
         />
-        <span className="font-bold">Trinity </span>
-      </div>
+        <span className="font-bold text-xl text-green-700">TMT </span>
+      </Link>
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex items-center space-x-6 font-bold text-sm">
         {/* Products */}
         <li className="relative group">
-          <button
-            className="flex items-center gap-1 hover:text-green-700 relative z-10"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Products
-            <ChevronDown
-              size={16}
-              className="transition-transform duration-200 group-hover:rotate-180"
-            />
-          </button>
-
-          <div
-            className="invisible opacity-0 translate-y-2 scale-[0.98]
-               group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100
-               absolute left-1/2 -translate-x-1/2 top-[36px]
-               transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto"
-          >
-            <div className="pointer-events-auto mt-3 w-[920px] max-w-[92vw] rounded-2xl border border-gray-200 bg-white shadow-xl p-6 origin-top">
-              <div className="grid grid-cols-4 gap-6 text-sm">
-                <div>
-                  <p className="mb-3 text-gray-500">Home Gym Equipment</p>
-                  <ul className="space-y-2">
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Treadmills
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Bikes
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Ellipticals
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Rowers
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Stair Climbers
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Multi Gyms
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="mb-3 text-gray-500">Strength</p>
-                  <ul className="space-y-2">
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Barbells & Plates
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Racks
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Benches
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Dumbbells & Kettlebells
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Bundles
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="mb-3 text-gray-500">Accessories</p>
-                  <ul className="space-y-2">
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Fitness accessories
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Bands
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Mats & Pads
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Add‑ons
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Storage racks
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Bags & Gear
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="mb-3 text-gray-500">Training Type</p>
-                  <ul className="space-y-2">
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Cardio
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Strength
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Functional
-                    </li>
-                    <li className="hover:text-green-700 cursor-pointer">
-                      Flexibility
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Link href={"/products"}>Products</Link>
         </li>
 
         {/* Brands */}
-        <li className="relative group">
+        <li className="relative  group">
           <button
             className="flex items-center gap-1 hover:text-green-700 relative z-10"
             aria-haspopup="true"
@@ -152,36 +48,121 @@ export default function Navbar() {
           </button>
 
           <div
-            className="invisible opacity-0 translate-y-2 scale-[0.98]
-               group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100
-               absolute left-1/2 -translate-x-1/2 top-[36px]
-               transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto"
+            className="absolute left-1/2 -translate-x-1/2 top-full pt-3
+    opacity-0 invisible
+    group-hover:opacity-100 group-hover:visible
+    transition-all duration-200 ease-out
+  "
           >
-            <div className="pointer-events-auto mt-3 w-[920px] max-w-[92vw] rounded-2xl border border-gray-200 bg-white shadow-xl p-6 origin-top">
+            <div
+              className="pointer-events-auto w-max min-w-[200px] max-w-[min(400px,92vw)]
+      rounded-lg border border-gray-200 bg-white shadow-xl p-6 origin-top"
+            >
               <ul className="grid grid-cols-1 gap-2 text-sm">
-                <li className="hover:text-green-700 cursor-pointer">
-                  h/p/cosmos
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/cosmed/categories"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Cosmed
+                  </Link>
                 </li>
-                <li className="hover:text-green-700 cursor-pointer">Cosmed</li>
-                <li className="hover:text-green-700 cursor-pointer">Contemplas</li>
-                <li className="hover:text-green-700 cursor-pointer">Ergoline</li>
-                <li className="hover:text-green-700 cursor-pointer">
-                  Zebris
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/hpcosmos/categoried"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    h/p/cosmos
+                  </Link>
                 </li>
-                <li className="hover:text-green-700 cursor-pointer">
-                  Kinvent
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/contemplas"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Contemplas
+                  </Link>
                 </li>
-                <li className="hover:text-green-700 cursor-pointer">
-                  Humacnorm
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/ergoline"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Ergoline
+                  </Link>
                 </li>
-                <li className="hover:text-green-700 cursor-pointer">
-                  Ametris
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/zebris"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Zebris
+                  </Link>
                 </li>
-                <li className="hover:text-green-700 cursor-pointer">
-                  CTN
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/kinvent"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Kinvent
+                  </Link>
                 </li>
-                <li className="hover:text-green-700 cursor-pointer">
-                  Cellit
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/humacnorm"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Humacnorm
+                  </Link>
+                </li>
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/ametris"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Ametris
+                  </Link>
+                </li>
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/ctn"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    CTN
+                  </Link>
+                </li>
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/cellit"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Cellit
+                  </Link>
+                </li>
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/neurosoft"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Neurosoft
+                  </Link>
+                </li>
+
+                <li className="whitespace-nowrap">
+                  <Link
+                    href="/products/movendo"
+                    className="hover:text-green-700 cursor-pointer"
+                  >
+                    Movendo
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -224,59 +205,12 @@ export default function Navbar() {
           <ul className="flex flex-col space-y-3 font-medium text-gray-800 text-sm w-full">
             {/* Products collapsible with height animation */}
             <li>
-              <button
+              <Link
+                href={"/products"}
                 className="w-full flex items-center justify-between hover:text-green-700"
-                onClick={() =>
-                  setMobileOpen((p) => ({ ...p, products: !p.products }))
-                }
-                aria-expanded={mobileOpen.products}
               >
                 <span>Products</span>
-                <ChevronDown
-                  size={18}
-                  className={`transition-transform duration-200 ${
-                    mobileOpen.products ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              <div
-                className={`grid overflow-hidden transition-all duration-200 ease-out ${
-                  mobileOpen.products
-                    ? "grid-rows-[1fr] opacity-100 mt-2"
-                    : "grid-rows-[0fr] opacity-0"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <div className="grid grid-cols-1 gap-3 text-[13px] text-gray-700">
-                    <div>
-                      <p className="text-gray-500 mb-2">Home Gym</p>
-                      <ul className="space-y-1 pl-3">
-                        <li className="hover:text-green-700">Treadmills</li>
-                        <li className="hover:text-green-700">Bikes</li>
-                        <li className="hover:text-green-700">Ellipticals</li>
-                        <li className="hover:text-green-700">Rowers</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="text-gray-500 mb-2">Strength</p>
-                      <ul className="space-y-1 pl-3">
-                        <li className="hover:text-green-700">Racks</li>
-                        <li className="hover:text-green-700">Benches</li>
-                        <li className="hover:text-green-700">Dumbbells</li>
-                        <li className="hover:text-green-700">Bundles</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="text-gray-500 mb-2">Accessories</p>
-                      <ul className="space-y-1 pl-3">
-                        <li className="hover:text-green-700">Bands</li>
-                        <li className="hover:text-green-700">Mats & Pads</li>
-                        <li className="hover:text-green-700">Storage</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </Link>
             </li>
 
             {/* Brands collapsible */}
@@ -305,13 +239,30 @@ export default function Navbar() {
               >
                 <div className="overflow-hidden">
                   <ul className="space-y-1 text-[13px] text-gray-700 pl-3">
-                    <li className="hover:text-green-700">Personal</li>
-                    <li className="hover:text-green-700">Artis</li>
-                    <li className="hover:text-green-700">Excite</li>
-                    <li className="hover:text-green-700">Skill</li>
-                    <li className="hover:text-green-700">Biostrength</li>
-                    <li className="hover:text-green-700">Pure Strength</li>
-                    <li className="hover:text-green-700">My Selection</li>
+                    {[
+                      { name: "Cosmed", href: "/products/cosmed" },
+                      { name: "h/p/cosmos", href: "/products/hpcosmos" },
+                      { name: "Contemplas", href: "/products/contemplas" },
+                      { name: "Ergoline", href: "/products/ergoline" },
+                      { name: "Zebris", href: "/products/zebris" },
+                      { name: "Kinvent", href: "/products/kinvent" },
+                      { name: "Humacnorm", href: "/products/humacnorm" },
+                      { name: "Ametris", href: "/products/ametris" },
+                      { name: "CTN", href: "/products/ctn" },
+                      { name: "Cellit", href: "/products/cellit" },
+                      { name: "Neurosoft", href: "/products/neurosoft" },
+                      { name: "Movendo", href: "/products/movendo" },
+                    ].map((brand) => (
+                      <li key={brand.name}>
+                        <Link
+                          href={brand.href}
+                          className="block hover:text-green-700 py-1"
+                          onClick={() => setIsOpen(false)} // closes menu after navigation
+                        >
+                          {brand.name}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
