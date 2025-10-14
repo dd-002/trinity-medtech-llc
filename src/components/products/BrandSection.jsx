@@ -29,7 +29,7 @@ export default function BrandSection() {
         "Professional video analysis systems for fast and precise visualisation through to high-end markerless motion analysis.",
       image: "/products/brands/contemplas/swimming.png",
       linkText: "BROWSE Contemplas",
-      href: "/products/contemplas",
+      href: "/products/contemplas/categories",
     },
     {
       title: "Ergoline",
@@ -37,7 +37,7 @@ export default function BrandSection() {
         "State-of-the-art microelectronics, precise measuring and control technology, and constructive solutions ",
       image: "/products/brands/ergoline/treadmill.png",
       linkText: "BROWSE Ergoline",
-      href: "/products/ergoline",
+      href: "/products/ergoline/categories",
     },
     {
       title: "Zebris",
@@ -45,7 +45,7 @@ export default function BrandSection() {
         "As an innovative technology company, zebris Medical GmbH looks back on more than 30 years of experience in biomechanics.",
       image: "/products/brands/zebris/zebris.png",
       linkText: "BROWSE Zebris",
-      href: "/products/zebris",
+      href: "/products/zebris/categories",
     },
     {
       title: "Kinvent",
@@ -53,7 +53,7 @@ export default function BrandSection() {
         "Kinvent's expertise lies in creating innovative biomechanical solutions for performance, rehabilitation, and scientific research.",
       image: "/products/brands/kinvent/kinvent.png",
       linkText: "BROWSE Kinvent",
-      href: "/products/kinvent",
+      href: "/products/kinvent/categories",
     },
     {
       title: "HumacNorm",
@@ -61,7 +61,7 @@ export default function BrandSection() {
         "Humac Norm delivers advanced isokinetic dynamometer systems for precise evaluation and rehabilitation of human performance.",
       image: "/products/brands/humacnorm/humacnorm.png",
       linkText: "BROWSE HumacNorm",
-      href: "/products/humacnorm",
+      href: "/products/humacnorm/categories",
     },
     {
       title: "Ametris (ActiGraph)",
@@ -69,7 +69,7 @@ export default function BrandSection() {
         "Ametris offers cutting-edge wearable technology through ActiGraph, enabling precise measurement and analysis of human activity and sleep patterns.",
       image: "/products/brands/ametris/actigraph.png",
       linkText: "BROWSE Ametris",
-      href: "/products/ametris",
+      href: "/products/ametris/categories",
     },
     {
       title: "CTN",
@@ -77,7 +77,7 @@ export default function BrandSection() {
         "CTN provides advanced medical and research instrumentation solutions, specializing in precise data collection .",
       image: "/products/brands/ctn/ctn.png",
       linkText: "BROWSE CTN",
-      href: "/products/ctn",
+      href: "/products/ctn/categories",
     },
     {
       title: "Cellit",
@@ -85,7 +85,7 @@ export default function BrandSection() {
         "Cellit delivers innovative IHHT  systems for cellular-level health optimization .",
       image: "/products/brands/cellit/cellit.png",
       linkText: "BROWSE Cellit",
-      href: "/products/cellit",
+      href: "/products/cellit/categories",
     },
     {
       title: "Neurosoft TMS",
@@ -93,7 +93,7 @@ export default function BrandSection() {
         "Neurosoft is a global leader in Transcranial Magnetic Stimulation (TMS) technology,",
       image: "/products/brands/neurosoft/neurosoft.png",
       linkText: "BROWSE Neurosoft TMS",
-      href: "/products/neurosoft",
+      href: "/products/neurosoft/categories",
     },
     {
       title: "Movendo",
@@ -101,7 +101,7 @@ export default function BrandSection() {
         "Movendo Technology combines robotics and AI to deliver intelligent rehabilitation solutions .",
       image: "/products/brands/movendo/movendo.png",
       linkText: "BROWSE Movendo",
-      href: "/products/movendo",
+      href: "/products/movendo/categories",
     },
   ];
 
