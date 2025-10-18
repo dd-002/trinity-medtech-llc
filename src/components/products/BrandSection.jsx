@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
-import CTAButton from "../CTAButton";
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import WordsPullUpMotion from "../animations/WordsPullUp";
 import Link from "next/link";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 export default function BrandSection() {
   const categories = [
@@ -83,7 +83,7 @@ export default function BrandSection() {
     {
       title: "Cellit",
       description:
-        "Cellit delivers innovative IHHT  systems for cellular-level health optimization .",
+        "Cellit delivers innovative IHHT  systems for cellular-level health optimization .",
       image: "/products/brands/cellit/cellit.png",
       linkText: "BROWSE Cellit",
       href: "/products/cellit/categories",
@@ -106,43 +106,95 @@ export default function BrandSection() {
     },
   ];
 
+  // Define the main animation variants for the card (container)
+  // This will handle the parent's entrance and stagger its children
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        // Stagger the child animations (title and description) after the card is visible
+        staggerChildren: 0.2, // Time between each child's animation start
+        delayChildren: 0.1, // Delay before the first child starts
+      },
+    },
+  };
+
+  // Define the animation variants for the text elements (children)
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  };
+
   return (
     <section className="bg-[#1a1a1a] py-16 px-4 sm:px-6 lg:px-8 mt-2 rounded-xl">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-8xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 tracking-wide">
           Browse By
           <br />
           <WordsPullUpMotion
             text="BRANDS"
             color={"#6fe86f"}
-            fontSize={"4rem"}
+            fontSize={"4.5rem"}
             delay={0.5}
           />
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {categories.map((category) => (
-            <div
-              key={category.title}
-              className="group relative overflow-hidden rounded-lg h-80"
-            >
-              <Link href={category.href}>
-              <Image
-                src={category.image}
-                alt={category.title}
-                fill
-                style={{ objectFit: "cover" }}
-                className="group-hover:scale-105 transition-transform duration-500"
-              />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1">
+          {categories.map((category) => {
+            const ref = useRef(null);
+            // useInView will trigger once when the ref element enters the viewport
+            const inView = useInView(ref, { once: true, margin: "-100px 0px" });
+            const controls = useAnimation();
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-6 text-white">
-                <h3 className="text-xl font-bold mb-2">{category.title}</h3>
-                <p className="text-sm leading-relaxed mb-4">{category.description}</p>
-              </div>
-              </Link>
-            </div>
-          ))}
+            useEffect(() => {
+              if (inView) {
+                controls.start("visible");
+              }
+            }, [inView, controls]);
+
+            return (
+              <motion.div
+                key={category.title}
+                ref={ref}
+                className="group relative overflow-hidden rounded-lg h-80"
+                initial="hidden"
+                animate={controls} // Animate based on the controls
+                variants={containerVariants} // Use the parent variants
+              >
+                <Link href={category.href}>
+                  <Image
+                    src={category.image}
+                    alt={category.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className="group-hover:scale-105 transition-transform duration-500"
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-6 text-white">
+                    {/* Title/Pill */}
+                    <motion.p
+                      className="inline-block max-w-max bg-white/30 text-white text-sm font-semibold px-3 py-1 rounded-full mb-2 backdrop-blur-sm"
+                      variants={itemVariants} // Use the child variants
+                    >
+                      {category.title}
+                    </motion.p>
+
+                    {/* Description */}
+                    <motion.p
+                      className="text-sm leading-relaxed mb-4"
+                      variants={itemVariants} // Use the child variants
+                    >
+                      {category.description}
+                    </motion.p>
+                  </div>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
