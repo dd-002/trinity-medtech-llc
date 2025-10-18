@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Pause, Play, ChevronLeft, ChevronRight } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
+import WordsPullUpMotion from "../animations/WordsPullUp";
 
 const slides = [
   {
     title: "Products",
-    blurb:
-      "Explore our Pro-grade products from brands across the world",
+    blurb: "Explore our Pro-grade products from brands across the world",
     cta: "Explore",
   },
 ];
@@ -50,20 +50,24 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex items-center">
         <div className="w-full text-left text-white">
-          <h1
-            key={index}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight drop-shadow-md transition-all duration-500 ease-out"
-          >
-            {slides[index].title}
-          </h1>
+          {/* Title line */}
+          <div>
+            <WordsPullUpMotion text="Products" fontSize="4rem" delay={0.25} />
+          </div>
 
-          <p
-            key={`p-${index}`}
-            className="mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base lg:text-lg text-white/85 transition-all duration-500 ease-out delay-100"
-          >
-            {slides[index].blurb}
-          </p>
+          {/* Subtitle line */}
+          <div className="mt-3 sm:mt-4">
+            <WordsPullUpMotion
+              text="Explore our Pro-grade products from brands across the world"
+              weight={300}
+              className="text-white/85"
+              fontSize="1.2rem"
+              delay={0.35}
+              opacity={0.85}
+            />
+          </div>
 
+          {/* CTA */}
           <div
             key={`cta-${index}`}
             className="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4 transition-all duration-500 ease-out delay-200"

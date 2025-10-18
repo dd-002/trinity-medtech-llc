@@ -193,7 +193,7 @@ export default function ProductCarousel({
 
   return (
     <section className="relative w-full overflow-hidden py-8 bg-white">
-      <div className="text-center text-7xl font-bold py-24 md:py-30 lg:py-50"> Explore Featured <span className="text-green-700">Products</span></div>
+      <div className="text-center text-7xl font-bold py-24 md:py-30 lg:py-50"> Explore Featured <span className="text-green-500">Products</span></div>
 
       <div className="relative mx-auto pl-2">
         {/* Track */}
