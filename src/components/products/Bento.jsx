@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import CTAButton from "../CTAButton";
+import WordsPullUpMotion from "../animations/WordsPullUp";
 
 export default function BentoShowcase() {
   return (
     <section className="mx-auto w-full px-2 lg:px-2 pt-10 md:pt-20 lg:pt-32 pb-10 bg-[#f7f8f4] mt-6 rounded-lg">
       {/* Heading */}
-      <header className="mx-2 md:mx-16 lg:mx-32 mb-12">
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-black tracking-tight">
+      <header className="mx-2 md:mx-16 lg:mx-32 mb-12 leading-[1.2] ">
+        <h2 className="text-2xl md:text-4xl lg:text-6xl font-semibold text-black tracking-tight">
           Explore our{" "}
-          <span className="text-green-500 font-extrabold">LineUp</span>
+          <WordsPullUpMotion text="LineUp" fontSize="4rem" className="text-green-500" weight={800} lineHeight="1.1" delay={0.5}/>
         </h2>
       </header>
 

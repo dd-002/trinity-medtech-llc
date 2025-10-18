@@ -3,7 +3,8 @@
 import React from "react";
 import CTAButton from "../CTAButton";
 import Image from "next/image";
-
+import WordsPullUpMotion from "../animations/WordsPullUp";
+import Link from "next/link";
 
 export default function BrandSection() {
   const categories = [
@@ -111,37 +112,35 @@ export default function BrandSection() {
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 tracking-wide">
           Browse By
           <br />
-          <span className="text-[#6fe86f]">BRANDS</span>
+          <WordsPullUpMotion
+            text="BRANDS"
+            color={"#6fe86f"}
+            fontSize={"4rem"}
+            delay={0.5}
+          />
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {categories.map((category) => (
             <div
               key={category.title}
-              className="group relative overflow-hidden rounded-lg"
+              className="group relative overflow-hidden rounded-lg h-80"
             >
-              {/* Image Container with deterministic size to avoid layout shifts */}
-              <div className="relative h-64 w-full overflow-hidden rounded-t-lg bg-gray-600">
-                <Image
-                  src={category.image}
-                  alt={category.title}
-                  fill
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
+              <Link href={category.href}>
+              <Image
+                src={category.image}
+                alt={category.title}
+                fill
+                style={{ objectFit: "cover" }}
+                className="group-hover:scale-105 transition-transform duration-500"
+              />
 
-              {/* Yellow Content Section */}
-              <div className="bg-[#6ee76e] p-6 flex flex-col justify-between min-h-[240px]">
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-3 tracking-wide">
-                    {category.title}
-                  </h3>
-                  <p className="text-black text-sm leading-relaxed mb-6">
-                    {category.description}
-                  </p>
-                </div>
-               <CTAButton href={category.href} text={category.linkText} textColor="black" hoverColor="#53b653"/>
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-6 text-white">
+                <h3 className="text-xl font-bold mb-2">{category.title}</h3>
+                <p className="text-sm leading-relaxed mb-4">{category.description}</p>
               </div>
+              </Link>
             </div>
           ))}
         </div>
