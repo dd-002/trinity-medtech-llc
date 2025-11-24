@@ -13,7 +13,7 @@ export default function Footer() {
               className="inline-flex items-center gap-3 group"
               aria-label="Seed home"
             >
-              <Image src={"/logos/logow.svg"} width={20} height={20} alt="Logo" />
+              {/* <Image src={"/logos/logow.svg"} width={20} height={20} alt="Logo" /> */}
               <span className="text-xl font-semibold tracking-wide">
                 Trinity Medtech LLC
               </span>
@@ -58,13 +58,13 @@ export default function Footer() {
 
           {/* FDA-style notice */}
           <div className="flex items-center justify-center rounded-lg border border-[#204a20] bg-[#102610] p-4 text-xs text-[#a7c9a7] sm:p-6">
-            <Image
+            {/* <Image
               src="/logos/logoc.svg"
               width={100}
               height={100}
               alt="LOGO"
               className="flex-shrink-0"
-            />
+            /> */}
             <span className="ml-4 text-3xl sm:text-5xl font-semibold leading-none">
               Trinity
             </span>

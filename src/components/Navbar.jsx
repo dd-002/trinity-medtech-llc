@@ -16,13 +16,13 @@ export default function Navbar() {
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-500 w-[calc(100%-2rem)] max-w-7xl bg-white  shadow-lg rounded-md px-5 md:px-8 py-3 flex items-center justify-between transition-all duration-300 text-black">
       {/* Logo */}
       <Link href="/" className="flex items-center space-x-3">
-        <Image
+        {/* <Image
           src="/logos/logoc.svg"
           alt="TechnoGym Logo"
           width={20}
           height={8}
           className="object-contain"
-        />
+        /> */}
         <span className="font-bold text-xl text-green-700">TMT </span>
       </Link>
 

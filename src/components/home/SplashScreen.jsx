@@ -88,16 +88,17 @@ export default function SplashScreen() {
       {/* Logo & Final Text */}
       {phase === "logo" && (
         <div className="flex flex-col items-center space-y-4 animate-fade-in-up">
-          <Image
+          {/* <Image
             src="/logos/logoc.svg"
             alt="Trinity Logo"
             width={100}
             height={100}
             className="animate-glow"
-          />
-          <p className="text-lg text-gray-300">Relax, you are entering</p>
+          /> */}
+          <h1 className="text-green-400 font-bold text-5xl">TMT</h1>
+          <p className="text-lg text-gray-300">Your, wellness journey</p>
           <h1 className="text-2xl font-semibold text-green-400">
-            Trinity Website
+            Starts Here
           </h1>
         </div>
       )}
