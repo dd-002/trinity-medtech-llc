@@ -16,7 +16,7 @@ export default function BioHero() {
           {/* Left: brand + copy */}
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <div className="relative size-5  overflow-hidden ring-1 ring-white bg-white">
+              {/* <div className="relative size-5  overflow-hidden ring-1 ring-white bg-white">
                 <Image
                   src={logoSrc}
                   alt="Brand logo"
@@ -25,13 +25,13 @@ export default function BioHero() {
                   className="object-cover"
                   priority
                 />
-              </div>
+              </div> */}
               <span className="text-sm  tracking-wide text-[#244220]">
                 Trinity • Healthtech
               </span>
             </div>
 
-            <h1 className="text-[#244220] text-4xl sm:text-5xl font-semibold leading-tight">
+            <h1 className="text-green-600 text-4xl sm:text-5xl font-semibold leading-tight">
               You are more than human.
             </h1>
 
@@ -42,7 +42,7 @@ export default function BioHero() {
             <div className="mt-8">
               <Link
                 href="#discover"
-                className="inline-flex items-center gap-3 rounded-lg bg-[#244220] text-white px-5 py-3 text-sm font-medium shadow-sm hover:bg-[#1f381c] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#244220]"
+                className="inline-flex items-center gap-3 rounded-lg bg-green-600 text-white px-5 py-3 text-sm font-medium shadow-sm hover:bg-[#1f381c] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#244220]"
               >
                 Discover
                 <span

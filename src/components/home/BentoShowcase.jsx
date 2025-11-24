@@ -36,13 +36,13 @@ export default function BentoShowcase() {
           {/* Content */}
           <div className="relative z-10">
             <Link href="/" className="flex items-center space-x-3">
-              <Image
+              {/* <Image
                 src="/logos/logoc.svg"
                 alt="TechnoGym Logo"
                 width={20}
                 height={8}
                 className="object-contain"
-              />
+              /> */}
               <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-black">
                 <span className="text-green-700">Trinity</span> Medtech LLC
               </h3>

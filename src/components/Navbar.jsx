@@ -175,12 +175,15 @@ export default function Navbar() {
 
       {/* Right Section */}
       <div className="hidden md:flex items-center space-x-5 text-sm font-bold">
+        <Link href={"/contact-us"}>
         <span>
           Get In Touch{" "}
           <span className="text-xs bg-[#21a70f] text-white px-1 rounded-sm">
             ↗
           </span>
         </span>
+        </Link>
+
       </div>
 
       {/* Mobile Menu Button */}
@@ -271,7 +274,7 @@ export default function Navbar() {
             <li className="hover:text-green-700 cursor-pointer"><Link href={"/faq"}>FAQ</Link></li>
             <li className="hover:text-green-700 cursor-pointer"><Link href={"/stories"}>Stories</Link></li>
             <li className="hover:text-green-700 cursor-pointer flex items-center space-x-1">
-              <Link href={"/contactus"}>
+              <Link href={"/contact-us"}>
                             <span>Get In Touch</span>
               <span className="text-xs bg-green-400 text-black px-1 rounded-sm">
                 ↗
